@@ -1,0 +1,354 @@
+{% extends 'shared/base.html' %}
+{% load static%}
+{% block content %}
+<div class="py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">{{ user.police_profile.get_designation_display }} Dashboard - {{ user.police_station.name }}</h1>
+        <div class="btn-group">
+            <button class="btn btn-sm btn-outline-secondary">Today</button>
+            <button class="btn btn-sm btn-outline-secondary active">Week</button>
+            <button class="btn btn-sm btn-outline-secondary">Month</button>
+        </div>
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="row mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Station Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ station_crime_count }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Solved Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ solved_count }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Active Officers</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ active_officers }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-shield fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                High Priority</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ high_priority_count }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    
+    <div class="row">
+        <!-- Crime Trend -->
+        <div class="col-xl-8 col-lg-7 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Crime Trend (Last 30 Days)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="crimeTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Status -->
+        <div class="col-xl-4 col-lg-5 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Case Status</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="caseStatusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Map section-->
+  <div id="map-container">
+        <div id="controls">
+           <!-- <label for="district">District:</label>
+            <select id="district">
+                <option value="">Select a district</option>
+            </select>-->
+        </div>
+        <iframe src="{{ district_map }}" width="100%" height="500px" frameborder="0"></iframe>
+
+    </div>
+
+
+
+
+</div>
+    <!-- Recent Cases Table -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-primary">Recent Crime Reports</h6>
+            <a href="{% url 'case_list' %}" class="btn btn-sm btn-primary">View All</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Case ID</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for crime in recent_crimes %}
+                        <tr>
+                            <td><a href="{% url 'case_detail' crime.id %}">{{ crime.id }}</a></td>
+                            <td>{{ crime.crime_category.name }}</td>
+                            <td>{{ crime.location.area }}</td>
+                            <td>{{ crime.date_occurred|date:"M d, Y" }}</td>
+                            <td>
+                                <span class="badge 
+                                    {% if crime.status == 'solved' %}bg-success
+                                    {% elif crime.status == 'under_investigation' %}bg-warning
+                                    {% elif crime.status == 'closed' %}bg-secondary
+                                    {% else %}bg-primary{% endif %}">
+                                    {{ crime.get_status_display }}
+                                </span>
+                            </td>
+                            <td>
+                                {% if crime.is_high_priority %}
+                                <span class="badge bg-danger">High</span>
+                                {% else %}
+                                <span class="badge bg-info">Normal</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center">No recent crime reports found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Crime Trend Chart
+    const trendCtx = document.getElementById('crimeTrendChart').getContext('2d');
+    new Chart(trendCtx, {
+        type: 'line',
+        data: {
+            labels: {{ trend_dates|safe }},
+            datasets: [{
+                label: 'Crime Reports',
+                data: {{ trend_counts|safe }},
+                borderColor: '#4e73df',
+                backgroundColor: 'rgba(78, 115, 223, 0.05)',
+                fill: true,
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+
+    // Case Status Chart
+    const statusCtx = document.getElementById('caseStatusChart').getContext('2d');
+    new Chart(statusCtx, {
+        type: 'doughnut',
+        data: {
+            labels: {{ status_labels|safe }},
+            datasets: [{
+                data: {{ status_data|safe }},
+                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+<!-- Leaflet CDN -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<!-- Script for map functionality -->
+<script>
+    const districtColors = [
+        '#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33F3',
+        '#33FFF3', '#FF8C33', '#8C33FF', '#33FF8C', '#FF338C',
+        '#33A2FF', '#A2FF33', '#FF33A2', '#33FFA2', '#A233FF'
+    ];
+
+    // District data with approximate center coordinates
+    const districtData = {
+        "Thiruvananthapuram": { center: [8.5241, 76.9366], zoom: 11 },
+        "Ernakulam": { center: [9.9816, 76.2999], zoom: 11 },
+        "Kozhikode": { center: [11.2588, 75.7804], zoom: 11 },
+        "Kannur": { center: [11.8745, 75.3704], zoom: 11 },
+        "Kollam": { center: [8.8932, 76.6141], zoom: 11 },
+        "Alappuzha": { center: [9.4980, 76.3388], zoom: 11 },
+        "Idukki": { center: [9.8496, 76.9750], zoom: 10 },
+        "Palakkad": { center: [10.7867, 76.6548], zoom: 10 },
+        "Malappuram": { center: [11.0510, 76.0711], zoom: 10 },
+        "Thrissur": { center: [10.5276, 76.2144], zoom: 11 },
+        "Kottayam": { center: [9.5916, 76.5222], zoom: 11 },
+        "Pathanamthitta": { center: [9.2648, 76.7870], zoom: 11 },
+        "Wayanad": { center: [11.6850, 76.1320], zoom: 10 },
+        "Kasaragod": { center: [12.4996, 74.9869], zoom: 11 }
+    };
+
+    // Initialize map centered on Kerala
+    const map = L.map('map').setView([10.85, 76.27], 7);
+    
+    // Add base tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Function to get color based on district name
+    function getDistrictColor(districtName) {
+        const hash = hashCode(districtName);
+        const index = Math.abs(hash) % districtColors.length;
+        return districtColors[index];
+    }
+
+    function hashCode(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        }
+        return hash;
+    }
+
+    // Create the district layer
+    const districtLayer = L.geoJSON(null, {
+        style: function(feature) {
+            return {
+                fillColor: getDistrictColor(feature.properties.DISTRICT),
+                weight: 2,
+                opacity: 1,
+                color: 'black',  // Border color
+                fillOpacity: 0.7
+            };
+        },
+        onEachFeature: function(feature, layer) {
+            // Highlight on hover
+            layer.on({
+                mouseover: function(e) {
+                    layer.setStyle({
+                        weight: 3,
+                        color: '#666',
+                        fillOpacity: 0.9
+                    });
+                    layer.bringToFront();
+                },
+                mouseout: function(e) {
+                    districtLayer.resetStyle(layer);
+                }
+            });
+            layer.bindPopup(feature.properties.DISTRICT);
+        }
+    }).addTo(map);
+
+    // Load Kerala districts GeoJSON data
+    fetch('https://raw.githubusercontent.com/geohacker/india/master/district/kerala.geojson')
+        .then(response => response.json())
+        .then(data => {
+            districtLayer.addData(data);
+            
+            // Fit bounds to Kerala
+            map.fitBounds(districtLayer.getBounds());
+        })
+        .catch(error => {
+            console.error('Error loading GeoJSON data:', error);
+        });
+
+    // Populate district dropdown
+    const districtSelect = document.getElementById('district');
+    Object.keys(districtData).sort().forEach(district => {
+        const option = document.createElement('option');
+        option.value = district;
+        option.textContent = district;
+        districtSelect.appendChild(option);
+    });
+
+    const userDistrict = "{{ district }}";
+
+    // If user has a district set, select it and zoom to it
+    if (userDistrict && districtData[userDistrict]) {
+        districtSelect.value = userDistrict;
+        const { center, zoom } = districtData[userDistrict];
+        map.flyTo(center, zoom);
+    }
+
+    // Zoom to selected district when user changes selection
+    districtSelect.addEventListener('change', function() {
+        const selectedDistrict = this.value;
+        if (selectedDistrict && districtData[selectedDistrict]) {
+            const { center, zoom } = districtData[selectedDistrict];
+            map.flyTo(center, zoom);
+        }
+    });
+</script>
+
+
+
+{% endblock %}
