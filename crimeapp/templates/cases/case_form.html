@@ -1,0 +1,64 @@
+{% extends 'shared/base.html' %}
+
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Crime Report</h2>
+    <div class="progress mb-4">
+        <div class="progress-bar" role="progressbar" style="width: {{ current_step}}%" 
+             aria-valuenow="{{ current_step}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    
+   <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <!-- Step 1 -->
+    <div class="step" id="step1" {% if current_step != 1 %}style="display:none;"{% endif %}>
+        {% if basic_form %}
+            {{ basic_form.as_p }}
+        {% endif %}
+    </div>
+    
+    <!-- Step 2 -->
+    <div class="step" id="step2" {% if current_step != 2 %}style="display:none;"{% endif %}>
+        {% if victim_form %}
+            {{ victim_form.as_p }}
+        {% endif %}
+    </div>
+    
+    <!-- Step 3 -->
+    <div class="step" id="step3" {% if current_step != 3 %}style="display:none;"{% endif %}>
+        {% if evidence_form %}
+            {{ evidence_form.as_p }}
+        {% endif %}
+    </div>
+    
+    <div class="form-navigation mt-4">
+        {% if current_step > 1 %}
+            <button type="submit" name="prev_step" class="btn btn-secondary">Previous</button>
+        {% endif %}
+        
+        {% if current_step < total_steps %}
+            <button type="submit" name="next_step" class="btn btn-primary float-right">Next</button>
+        {% else %}
+            <button type="submit" name="submit" class="btn btn-success float-right">Submit Report</button>
+        {% endif %}
+    </div>
+</form>
+</div>
+
+<script>
+// Optional: You can add client-side validation and step navigation without page reload
+document.addEventListener('DOMContentLoaded', function() {
+    // This is just for demonstration - the server-side handling is already implemented
+    const steps = document.querySelectorAll('.step');
+    const prevBtn = document.querySelector('button[name="prev_step"]');
+    const nextBtn = document.querySelector('button[name="next_step"]');
+    
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        // Let the form submit normally
+    });
+});
+</script>
+{% endblock %}

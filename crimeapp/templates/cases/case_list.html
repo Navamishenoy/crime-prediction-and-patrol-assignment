@@ -1,0 +1,168 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Case Management</h1>
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-table me-1"></i>All Cases</span>
+                <a href="{% url 'case_add' %}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-plus"></i> Add New Case
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Filter Form -->
+            <form method="get" class="mb-4">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select name="category" id="category" class="form-select">
+                            <option value="">All Categories</option>
+                            {% for category in categories %}
+                            <option value="{{ category.id }}" {% if current_filters.category == category.id|stringformat:"s" %}selected{% endif %}>
+                                {{ category.name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="status" class="form-label">Status</label>
+                        <select name="status" id="status" class="form-select">
+                            <option value="">All Statuses</option>
+                            {% for status in status_choices %}
+                            <option value="{{ status.0 }}" {% if current_filters.status == status.0 %}selected{% endif %}>
+                                {{ status.1 }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="priority" class="form-label">Priority</label>
+                        <select name="priority" id="priority" class="form-select">
+                            <option value="">All Priorities</option>
+                            <option value="high" {% if current_filters.priority == 'high' %}selected{% endif %}>High</option>
+                            <option value="normal" {% if current_filters.priority == 'normal' %}selected{% endif %}>Normal</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="search" class="form-label">Search</label>
+                        <input type="text" name="search" id="search" class="form-control" 
+                               placeholder="Case ID or description..." value="{{ current_filters.search }}">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Cases Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>
+                                <a href="?{% if current_filters.search %}search={{ current_filters.search }}&{% endif %}{% if current_filters.category %}category={{ current_filters.category }}&{% endif %}{% if current_filters.status %}status={{ current_filters.status }}&{% endif %}{% if current_filters.priority %}priority={{ current_filters.priority }}&{% endif %}sort={% if current_filters.sort == 'id' %}-id{% else %}id{% endif %}">
+                                    Case ID
+                                    {% if current_filters.sort == 'id' %}<i class="fas fa-sort-up ms-1"></i>
+                                    {% elif current_filters.sort == '-id' %}<i class="fas fa-sort-down ms-1"></i>
+                                    {% else %}<i class="fas fa-sort ms-1"></i>{% endif %}
+                                </a>
+                            </th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>
+                                <a href="?{% if current_filters.search %}search={{ current_filters.search }}&{% endif %}{% if current_filters.category %}category={{ current_filters.category }}&{% endif %}{% if current_filters.status %}status={{ current_filters.status }}&{% endif %}{% if current_filters.priority %}priority={{ current_filters.priority }}&{% endif %}sort={% if current_filters.sort == 'date_reported' %}-date_reported{% else %}date_reported{% endif %}">
+                                    Reported On
+                                    {% if current_filters.sort == 'date_reported' %}<i class="fas fa-sort-up ms-1"></i>
+                                    {% elif current_filters.sort == '-date_reported' %}<i class="fas fa-sort-down ms-1"></i>
+                                    {% else %}<i class="fas fa-sort ms-1"></i>{% endif %}
+                                </a>
+                            </th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for case in cases %}
+                        <tr>
+                            <td><strong>{{ case.id }}</strong></td>
+                            <td>{{ case.crime_category.name }}</td>
+                            <td class="text-truncate" style="max-width: 200px;" title="{{ case.description }}">
+                                {{ case.description|truncatechars:50 }}
+                            </td>
+                            <td>{{ case.date_reported|date:"M d, Y H:i" }}</td>
+                            <td>
+                                <span class="badge 
+                                    {% if case.status == 'solved' %}bg-success
+                                    {% elif case.status == 'under_investigation' %}bg-warning
+                                    {% elif case.status == 'closed' %}bg-secondary
+                                    {% else %}bg-primary{% endif %}">
+                                    {{ case.get_status_display }}
+                                </span>
+                            </td>
+                            <td>
+                                {% if case.is_high_priority %}
+                                <span class="badge bg-danger">High</span>
+                                {% else %}
+                                <span class="badge bg-info">Normal</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url 'case_detail' case.id %}" class="btn btn-sm btn-outline-primary" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                {% if request.user.role == 'admin' or request.user == case.assigned_officer or request.user == case.reported_by %}
+                                <a href="" class="btn btn-sm btn-outline-secondary" title="Edit">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7" class="text-center py-4">No cases found matching your criteria</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            {% if cases.paginator.num_pages > 1 %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if cases.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">&laquo; First</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ cases.previous_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="page-item disabled">
+                        <span class="page-link">
+                            Page {{ cases.number }} of {{ cases.paginator.num_pages }}
+                        </span>
+                    </li>
+
+                    {% if cases.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ cases.next_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">Next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ cases.paginator.num_pages }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">Last &raquo;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
