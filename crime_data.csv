@@ -1,0 +1,301 @@
+﻿district,block,ward,start_date,shift,crime_type,latitude,longitude,severity_level
+Ernakulam,Ernakulam North,3,05-06-2025 09:57,midnight,Theft,9.993978,76.284314,2
+Kollam,Karunagappally,3,01-03-2025 04:25,midnight,Fraud,10.788115,75.430424,3
+Ernakulam,Ernakulam North,2,12-07-2024 08:01,day,Assault,10.043022,76.308921,4
+Ernakulam,Ernakulam North,7,23-03-2025 16:59,day,Fraud,9.984587,76.32828,3
+Ernakulam,Ernakulam North,7,05-08-2024 15:21,evening,Assault,9.959662,76.290185,4
+Kottayam,Pala,2,08-10-2024 11:09,midnight,Fraud,9.347597,77.483837,3
+Idukki,Nedumkandam,3,07-08-2024 06:07,evening,Fraud,9.19559,76.432027,3
+Ernakulam,Ernakulam North,1,08-09-2024 17:32,day,Assault,9.98552,76.305784,4
+Ernakulam,Ernakulam North,5,30-10-2024 00:48,evening,Homicide,9.978698,76.288883,5
+Ernakulam,Ernakulam North,1,03-04-2025 02:07,day,Cybercrime,9.981069,76.323105,3
+Ernakulam,Ernakulam North,3,15-10-2024 08:32,midnight,Fraud,9.99986,76.319578,3
+Kasaragod,Kasaragod Town,6,20-11-2024 09:30,day,Fraud,9.047767,76.511316,3
+Kollam,Karunagappally,2,21-08-2024 04:16,midnight,Homicide,9.957634,75.317386,5
+Ernakulam,Ernakulam North,10,06-07-2024 02:30,evening,Fraud,9.984969,76.338495,3
+Ernakulam,Ernakulam North,1,23-11-2024 06:55,day,Fraud,9.974726,76.300265,3
+Ernakulam,Ernakulam North,1,12-05-2025 00:43,day,Fraud,9.953361,76.265318,3
+Ernakulam,Ernakulam North,5,06-08-2024 18:59,midnight,Kidnapping,9.957307,76.260231,5
+Thrissur,Chalakudy,4,26-08-2024 13:11,midnight,Cybercrime,12.319328,76.951703,3
+Idukki,Nedumkandam,8,18-02-2025 00:05,midnight,Cybercrime,9.373161,77.329971,3
+Ernakulam,Ernakulam North,4,07-02-2025 14:51,day,Cybercrime,9.969127,76.262543,3
+Ernakulam,Ernakulam North,6,16-07-2024 04:42,evening,Kidnapping,10.026555,76.314542,5
+Thrissur,Chalakudy,10,04-10-2024 17:46,midnight,Fraud,8.987979,75.535865,3
+Ernakulam,Ernakulam North,7,19-11-2024 22:24,day,Homicide,10.003168,76.302646,5
+Ernakulam,Ernakulam North,5,12-02-2025 10:56,midnight,Homicide,10.035,76.326845,5
+Kozhikode,Feroke,1,12-01-2025 08:53,midnight,Vandalism,10.394856,75.550542,2
+Ernakulam,Ernakulam North,5,13-07-2024 23:57,day,Fraud,9.993358,76.305491,3
+Malappuram,Manjeri,9,13-03-2025 11:42,evening,Homicide,10.215704,75.854265,5
+Ernakulam,Ernakulam North,4,07-03-2025 17:00,midnight,Fraud,10.026128,76.269065,3
+Kottayam,Pala,4,17-05-2025 20:55,midnight,Kidnapping,11.468688,76.549198,5
+Ernakulam,Ernakulam North,9,02-07-2024 04:02,midnight,Theft,9.976081,76.336764,2
+Ernakulam,Ernakulam North,6,18-03-2025 23:37,day,Kidnapping,9.995521,76.268689,5
+Malappuram,Manjeri,7,30-05-2025 02:11,evening,Vandalism,11.447454,77.284392,2
+Ernakulam,Ernakulam North,2,16-03-2025 09:23,day,Fraud,9.957626,76.293957,3
+Kollam,Karunagappally,4,04-03-2025 09:23,day,Assault,9.620223,75.964852,4
+Ernakulam,Ernakulam North,3,19-10-2024 23:23,evening,Assault,9.97604,76.283375,4
+Idukki,Nedumkandam,5,30-04-2025 13:49,evening,Assault,9.262077,75.834437,4
+Thrissur,Chalakudy,8,25-03-2025 11:08,midnight,Cybercrime,11.996333,76.345448,3
+Kasaragod,Kasaragod Town,2,26-08-2024 19:10,midnight,Homicide,9.290878,76.894312,5
+Thrissur,Chalakudy,7,14-07-2024 16:05,day,Assault,10.322521,75.803929,4
+Idukki,Nedumkandam,4,29-06-2024 22:09,day,Kidnapping,11.222344,75.762387,5
+Ernakulam,Ernakulam North,2,05-04-2025 02:50,midnight,Kidnapping,9.978267,76.275877,5
+Kollam,Karunagappally,6,13-07-2024 04:23,day,Cybercrime,10.132272,76.128621,3
+Ernakulam,Ernakulam North,6,17-03-2025 11:08,evening,Kidnapping,10.017898,76.30441,5
+Kozhikode,Feroke,9,23-10-2024 21:36,day,Homicide,10.536578,75.734434,5
+Kottayam,Pala,7,04-04-2025 00:30,evening,Homicide,12.285559,75.589442,5
+Kozhikode,Feroke,9,01-03-2025 20:59,evening,Robbery,11.61083,76.000962,4
+Idukki,Nedumkandam,6,30-04-2025 13:33,day,Kidnapping,9.096272,76.212963,5
+Ernakulam,Ernakulam North,3,21-10-2024 23:58,midnight,Kidnapping,10.01571,76.328713,5
+Kottayam,Pala,2,21-04-2025 11:25,day,Homicide,9.848385,76.200058,5
+Ernakulam,Ernakulam North,3,30-06-2024 01:22,evening,Fraud,10.00132,76.345265,3
+Ernakulam,Ernakulam North,2,28-01-2025 05:15,midnight,Fraud,9.975477,76.343187,3
+Ernakulam,Ernakulam North,4,19-10-2024 02:16,midnight,Cybercrime,9.965044,76.340939,3
+Kasaragod,Kasaragod Town,5,15-12-2024 08:48,evening,Kidnapping,12.615939,76.020273,5
+Malappuram,Manjeri,3,20-11-2024 09:54,evening,Robbery,11.644191,77.315333,4
+Kasaragod,Kasaragod Town,1,11-10-2024 04:10,midnight,Assault,11.92739,75.11327,4
+Kollam,Karunagappally,6,08-11-2024 00:56,midnight,Assault,10.84717,75.68051,4
+Kottayam,Pala,10,08-04-2025 08:11,midnight,Robbery,10.217598,77.271225,4
+Kollam,Karunagappally,8,23-03-2025 18:42,midnight,Vandalism,10.497126,76.645386,2
+Ernakulam,Ernakulam North,6,03-09-2024 11:37,midnight,Cybercrime,10.017147,76.317616,3
+Thrissur,Chalakudy,6,02-07-2024 08:28,day,Fraud,11.84139,77.409408,3
+Ernakulam,Ernakulam North,4,22-11-2024 05:22,midnight,Cybercrime,9.951865,76.346352,3
+Kollam,Karunagappally,10,14-04-2025 11:42,midnight,Vandalism,12.325272,75.025514,2
+Kozhikode,Feroke,6,04-04-2025 00:28,day,Vandalism,10.748658,75.574006,2
+Ernakulam,Ernakulam North,6,07-02-2025 11:12,midnight,Theft,10.046423,76.258126,2
+Thrissur,Chalakudy,1,14-07-2024 20:04,evening,Homicide,12.098775,75.437295,5
+Kottayam,Pala,6,12-06-2024 15:03,day,Fraud,9.11039,76.810383,3
+Ernakulam,Ernakulam North,5,21-01-2025 21:13,midnight,Kidnapping,10.005658,76.292273,5
+Kozhikode,Feroke,5,16-02-2025 22:15,midnight,Kidnapping,12.740758,75.281842,5
+Ernakulam,Ernakulam North,3,10-10-2024 12:53,day,Vandalism,10.019988,76.321615,2
+Ernakulam,Ernakulam North,9,08-09-2024 00:59,evening,Cybercrime,9.984831,76.262265,3
+Ernakulam,Ernakulam North,9,19-06-2024 20:21,day,Cybercrime,10.030252,76.297089,3
+Ernakulam,Ernakulam North,6,23-11-2024 13:34,evening,Fraud,9.971175,76.278475,3
+Ernakulam,Ernakulam North,7,03-03-2025 09:34,evening,Robbery,9.990283,76.308882,4
+Ernakulam,Ernakulam North,8,02-08-2024 13:47,midnight,Homicide,9.977994,76.34502,5
+Kottayam,Pala,9,28-01-2025 00:22,midnight,Assault,10.23854,75.587043,4
+Kozhikode,Feroke,7,31-05-2025 17:04,evening,Vandalism,9.031549,76.291633,2
+Ernakulam,Ernakulam North,1,26-11-2024 07:13,evening,Assault,9.993307,76.269558,4
+Ernakulam,Ernakulam North,2,15-10-2024 08:30,day,Kidnapping,9.991663,76.313748,5
+Ernakulam,Ernakulam North,1,27-06-2024 23:11,midnight,Theft,10.036145,76.309748,2
+Kollam,Karunagappally,3,28-04-2025 08:18,midnight,Assault,11.592765,75.876077,4
+Ernakulam,Ernakulam North,2,28-10-2024 09:41,day,Fraud,10.01119,76.330221,3
+Ernakulam,Ernakulam North,10,11-01-2025 21:28,day,Homicide,9.998743,76.286032,5
+Thrissur,Chalakudy,8,26-01-2025 00:55,day,Robbery,9.52307,77.453368,4
+Ernakulam,Ernakulam North,8,12-06-2024 05:04,midnight,Fraud,10.012695,76.255849,3
+Ernakulam,Ernakulam North,6,07-03-2025 23:06,midnight,Vandalism,10.013274,76.293799,2
+Ernakulam,Ernakulam North,9,05-03-2025 21:00,day,Fraud,9.987399,76.25245,3
+Ernakulam,Ernakulam North,1,29-01-2025 23:57,midnight,Assault,9.979497,76.326604,4
+Ernakulam,Ernakulam North,7,29-03-2025 04:34,midnight,Theft,10.030359,76.28408,2
+Ernakulam,Ernakulam North,5,16-06-2024 17:48,evening,Homicide,9.973701,76.300734,5
+Kollam,Karunagappally,3,14-11-2024 01:35,midnight,Robbery,8.848019,75.422465,4
+Ernakulam,Ernakulam North,4,29-08-2024 08:39,midnight,Cybercrime,9.988014,76.253503,3
+Ernakulam,Ernakulam North,10,03-08-2024 21:16,midnight,Cybercrime,10.007857,76.251981,3
+Idukki,Nedumkandam,5,21-08-2024 05:16,midnight,Theft,12.369549,75.268168,2
+Ernakulam,Ernakulam North,5,30-05-2025 21:12,evening,Robbery,9.97076,76.271739,4
+Kozhikode,Feroke,10,15-05-2025 07:27,evening,Fraud,10.996673,75.474856,3
+Kasaragod,Kasaragod Town,9,20-12-2024 21:33,evening,Kidnapping,9.742277,75.369233,5
+Thrissur,Chalakudy,5,20-06-2024 21:25,evening,Vandalism,9.031491,75.092081,2
+Ernakulam,Ernakulam North,8,18-06-2024 19:41,day,Robbery,10.013323,76.27396,4
+Malappuram,Manjeri,1,28-01-2025 09:59,evening,Robbery,10.877209,76.506466,4
+Ernakulam,Ernakulam North,3,04-07-2024 21:02,evening,Cybercrime,9.972751,76.250346,3
+Ernakulam,Ernakulam North,9,06-01-2025 19:53,evening,Vandalism,10.024023,76.263299,2
+Ernakulam,Ernakulam North,2,10-10-2024 10:33,evening,Kidnapping,10.03097,76.30346,5
+Kottayam,Pala,5,07-10-2024 02:27,evening,Robbery,8.518799,76.105533,4
+Ernakulam,Ernakulam North,5,06-11-2024 15:51,evening,Theft,10.011227,76.259623,2
+Ernakulam,Ernakulam North,10,22-05-2025 12:24,evening,Vandalism,10.018526,76.333189,2
+Ernakulam,Ernakulam North,10,24-09-2024 01:18,midnight,Fraud,10.002951,76.260443,3
+Ernakulam,Ernakulam North,3,25-02-2025 08:41,midnight,Theft,10.001293,76.315199,2
+Kasaragod,Kasaragod Town,8,09-06-2025 09:06,midnight,Cybercrime,9.948898,75.511592,3
+Ernakulam,Ernakulam North,1,18-08-2024 08:39,midnight,Cybercrime,10.021289,76.311792,3
+Idukki,Nedumkandam,1,08-02-2025 04:19,day,Assault,10.973298,77.023825,4
+Ernakulam,Ernakulam North,5,25-07-2024 05:54,evening,Homicide,10.004554,76.273927,5
+Ernakulam,Ernakulam North,9,21-04-2025 12:54,midnight,Fraud,9.982962,76.267908,3
+Ernakulam,Ernakulam North,9,11-07-2024 23:47,day,Cybercrime,10.038881,76.263568,3
+Ernakulam,Ernakulam North,6,07-10-2024 19:46,evening,Fraud,9.95622,76.295436,3
+Ernakulam,Ernakulam North,7,04-04-2025 20:17,evening,Theft,10.016666,76.286421,2
+Ernakulam,Ernakulam North,6,28-06-2024 14:02,evening,Homicide,10.009976,76.321608,5
+Ernakulam,Ernakulam North,7,22-11-2024 08:29,midnight,Robbery,10.04096,76.320982,4
+Ernakulam,Ernakulam North,3,27-03-2025 16:05,day,Assault,10.01915,76.269459,4
+Ernakulam,Ernakulam North,2,21-09-2024 23:39,evening,Robbery,10.034638,76.263664,4
+Ernakulam,Ernakulam North,2,31-08-2024 21:38,day,Robbery,9.97372,76.309431,4
+Kozhikode,Feroke,10,28-12-2024 02:21,evening,Assault,8.766269,75.253265,4
+Ernakulam,Ernakulam North,9,14-01-2025 17:11,evening,Theft,9.954861,76.298069,2
+Ernakulam,Ernakulam North,4,12-07-2024 16:50,day,Theft,10.047748,76.278689,2
+Ernakulam,Ernakulam North,7,29-04-2025 20:33,midnight,Fraud,9.962652,76.331834,3
+Ernakulam,Ernakulam North,2,06-12-2024 19:37,day,Homicide,10.027375,76.292026,5
+Malappuram,Manjeri,10,31-10-2024 14:44,evening,Kidnapping,10.887195,75.477901,5
+Ernakulam,Ernakulam North,1,20-04-2025 03:47,evening,Assault,9.962515,76.28847,4
+Ernakulam,Ernakulam North,3,15-12-2024 02:57,day,Kidnapping,9.974779,76.278606,5
+Ernakulam,Ernakulam North,5,15-01-2025 07:48,day,Vandalism,9.971578,76.25817,2
+Idukki,Nedumkandam,2,29-03-2025 05:11,midnight,Fraud,11.040454,76.080859,3
+Thrissur,Chalakudy,8,08-08-2024 05:06,midnight,Fraud,11.663777,76.849411,3
+Ernakulam,Ernakulam North,4,01-05-2025 03:30,midnight,Assault,10.017544,76.315617,4
+Ernakulam,Ernakulam North,7,21-11-2024 11:38,day,Homicide,10.034337,76.32978,5
+Kottayam,Pala,9,22-03-2025 05:46,day,Kidnapping,11.461236,77.024281,5
+Ernakulam,Ernakulam North,10,06-08-2024 08:43,evening,Robbery,10.017677,76.26631,4
+Ernakulam,Ernakulam North,3,18-08-2024 16:49,evening,Theft,9.990676,76.264318,2
+Ernakulam,Ernakulam North,7,28-11-2024 23:40,midnight,Cybercrime,9.966537,76.297637,3
+Thrissur,Chalakudy,3,30-10-2024 11:55,evening,Vandalism,8.944539,76.339978,2
+Ernakulam,Ernakulam North,3,23-05-2025 08:03,midnight,Robbery,9.951342,76.255732,4
+Kozhikode,Feroke,8,30-03-2025 01:34,day,Kidnapping,12.329243,76.813569,5
+Kottayam,Pala,7,13-05-2025 05:57,day,Fraud,10.482748,75.00914,3
+Ernakulam,Ernakulam North,3,28-09-2024 21:46,day,Robbery,10.022898,76.278168,4
+Kasaragod,Kasaragod Town,7,13-05-2025 04:15,day,Fraud,9.535922,76.563302,3
+Kozhikode,Feroke,8,04-09-2024 19:12,evening,Kidnapping,11.397611,77.282158,5
+Ernakulam,Ernakulam North,1,18-03-2025 23:58,day,Assault,9.997579,76.270501,4
+Ernakulam,Ernakulam North,9,20-04-2025 15:05,day,Fraud,10.014818,76.336249,3
+Ernakulam,Ernakulam North,10,17-07-2024 06:56,day,Fraud,10.005198,76.348516,3
+Ernakulam,Ernakulam North,5,30-04-2025 07:37,evening,Assault,9.952589,76.291414,4
+Ernakulam,Ernakulam North,9,21-02-2025 22:22,evening,Theft,10.042123,76.253128,2
+Ernakulam,Ernakulam North,8,05-11-2024 11:58,evening,Homicide,9.998135,76.347119,5
+Thrissur,Chalakudy,10,16-02-2025 05:14,evening,Fraud,10.052799,77.302946,3
+Ernakulam,Ernakulam North,3,01-05-2025 08:34,midnight,Fraud,10.046739,76.348802,3
+Kozhikode,Feroke,10,17-02-2025 21:02,day,Kidnapping,11.005678,77.254415,5
+Idukki,Nedumkandam,4,19-08-2024 00:11,evening,Vandalism,11.900956,76.078516,2
+Ernakulam,Ernakulam North,4,10-08-2024 21:06,day,Theft,10.033501,76.322401,2
+Ernakulam,Ernakulam North,7,05-08-2024 03:19,day,Homicide,10.032598,76.336331,5
+Kasaragod,Kasaragod Town,2,03-05-2025 14:42,midnight,Vandalism,11.712979,75.595537,2
+Kasaragod,Kasaragod Town,3,01-05-2025 20:35,midnight,Vandalism,9.054291,75.889402,2
+Kollam,Karunagappally,6,22-12-2024 12:50,day,Robbery,9.201658,75.46904,4
+Ernakulam,Ernakulam North,10,05-10-2024 08:27,evening,Theft,10.019905,76.265381,2
+Ernakulam,Ernakulam North,9,19-09-2024 06:49,day,Cybercrime,10.02999,76.319186,3
+Ernakulam,Ernakulam North,5,08-09-2024 20:19,day,Cybercrime,9.957334,76.274141,3
+Malappuram,Manjeri,4,03-04-2025 15:22,evening,Vandalism,12.783306,76.20495,2
+Ernakulam,Ernakulam North,4,29-01-2025 09:32,day,Assault,9.976114,76.32386,4
+Ernakulam,Ernakulam North,4,05-04-2025 16:04,midnight,Cybercrime,9.976328,76.303124,3
+Ernakulam,Ernakulam North,5,20-07-2024 01:50,midnight,Assault,10.042161,76.250733,4
+Ernakulam,Ernakulam North,10,09-08-2024 05:28,midnight,Assault,10.014146,76.259918,4
+Malappuram,Manjeri,10,08-10-2024 07:44,evening,Kidnapping,12.6518,76.262592,5
+Ernakulam,Ernakulam North,3,14-05-2025 02:18,midnight,Homicide,9.964116,76.305153,5
+Ernakulam,Ernakulam North,9,14-05-2025 02:01,evening,Fraud,9.966043,76.267331,3
+Ernakulam,Ernakulam North,10,01-10-2024 14:27,midnight,Theft,9.992273,76.255166,2
+Ernakulam,Ernakulam North,2,23-03-2025 23:51,day,Theft,10.003101,76.306417,2
+Ernakulam,Ernakulam North,10,15-09-2024 05:10,day,Theft,9.984825,76.3063,2
+Ernakulam,Ernakulam North,1,31-03-2025 10:54,day,Homicide,10.042852,76.348659,5
+Ernakulam,Ernakulam North,8,13-05-2025 02:49,evening,Assault,9.991935,76.262717,4
+Ernakulam,Ernakulam North,2,16-04-2025 18:44,day,Fraud,9.953097,76.340298,3
+Ernakulam,Ernakulam North,6,14-09-2024 16:47,midnight,Cybercrime,9.977252,76.278013,3
+Kasaragod,Kasaragod Town,4,08-10-2024 04:37,evening,Fraud,10.075438,75.328904,3
+Kasaragod,Kasaragod Town,1,09-03-2025 10:14,day,Theft,9.019219,76.891688,2
+Ernakulam,Ernakulam North,8,12-08-2024 16:09,day,Homicide,9.995315,76.278064,5
+Ernakulam,Ernakulam North,7,23-02-2025 00:43,midnight,Assault,9.961743,76.330761,4
+Ernakulam,Ernakulam North,7,01-12-2024 09:09,evening,Assault,9.986128,76.337976,4
+Ernakulam,Ernakulam North,8,02-09-2024 00:15,midnight,Robbery,10.043154,76.322525,4
+Kozhikode,Feroke,2,20-11-2024 13:04,evening,Fraud,11.442671,77.256871,3
+Ernakulam,Ernakulam North,4,17-04-2025 16:07,day,Robbery,9.966918,76.327353,4
+Malappuram,Manjeri,6,02-02-2025 08:43,evening,Fraud,10.780221,76.614665,3
+Kottayam,Pala,7,30-09-2024 14:15,midnight,Assault,8.72117,77.18094,4
+Idukki,Nedumkandam,8,09-05-2025 06:39,midnight,Theft,9.765893,75.06562,2
+Kottayam,Pala,9,02-12-2024 02:31,evening,Cybercrime,12.674668,75.586263,3
+Ernakulam,Ernakulam North,2,14-05-2025 22:38,midnight,Vandalism,9.990348,76.250944,2
+Ernakulam,Ernakulam North,1,03-10-2024 05:28,midnight,Assault,9.972641,76.334076,4
+Ernakulam,Ernakulam North,10,26-02-2025 14:24,day,Theft,10.002964,76.264507,2
+Malappuram,Manjeri,8,31-01-2025 03:42,day,Kidnapping,11.158504,76.403619,5
+Ernakulam,Ernakulam North,1,21-04-2025 18:21,day,Assault,10.026799,76.335192,4
+Kasaragod,Kasaragod Town,8,05-12-2024 21:18,day,Cybercrime,9.232086,76.413623,3
+Ernakulam,Ernakulam North,2,04-11-2024 02:04,midnight,Theft,10.004941,76.326184,2
+Ernakulam,Ernakulam North,2,20-09-2024 20:04,midnight,Assault,10.02857,76.257954,4
+Kottayam,Pala,4,25-07-2024 21:18,midnight,Theft,10.439898,76.023735,2
+Ernakulam,Ernakulam North,2,26-10-2024 02:49,day,Kidnapping,9.983016,76.271415,5
+Ernakulam,Ernakulam North,3,10-06-2025 16:06,day,Fraud,9.977242,76.270457,3
+Kottayam,Pala,9,01-03-2025 17:47,evening,Fraud,9.871108,77.222023,3
+Ernakulam,Ernakulam North,3,19-06-2024 14:09,evening,Assault,9.965074,76.339666,4
+Ernakulam,Ernakulam North,8,15-04-2025 03:51,midnight,Cybercrime,9.98862,76.303414,3
+Ernakulam,Ernakulam North,6,15-12-2024 01:04,midnight,Fraud,10.031506,76.253971,3
+Ernakulam,Ernakulam North,10,10-03-2025 17:06,midnight,Vandalism,10.046758,76.302113,2
+Kozhikode,Feroke,8,02-02-2025 16:46,evening,Homicide,12.003355,75.086627,5
+Ernakulam,Ernakulam North,2,24-01-2025 18:11,midnight,Vandalism,10.018178,76.296869,2
+Ernakulam,Ernakulam North,7,18-08-2024 18:01,midnight,Homicide,9.956975,76.274322,5
+Ernakulam,Ernakulam North,6,10-10-2024 06:20,midnight,Fraud,10.006192,76.277963,3
+Ernakulam,Ernakulam North,5,25-11-2024 07:24,evening,Vandalism,10.034999,76.338063,2
+Ernakulam,Ernakulam North,3,16-10-2024 04:44,day,Vandalism,10.001865,76.328509,2
+Ernakulam,Ernakulam North,7,19-02-2025 02:46,evening,Fraud,10.006675,76.255204,3
+Idukki,Nedumkandam,7,30-10-2024 15:41,day,Theft,11.325699,76.615801,2
+Ernakulam,Ernakulam North,6,11-10-2024 14:25,midnight,Fraud,10.032888,76.327294,3
+Ernakulam,Ernakulam North,2,09-06-2025 08:05,evening,Vandalism,10.048192,76.325449,2
+Kottayam,Pala,10,29-04-2025 20:08,day,Vandalism,11.928448,75.003096,2
+Ernakulam,Ernakulam North,4,02-09-2024 11:29,midnight,Homicide,10.00731,76.330462,5
+Ernakulam,Ernakulam North,2,20-01-2025 23:05,evening,Assault,9.965136,76.333645,4
+Malappuram,Manjeri,5,05-01-2025 11:35,midnight,Fraud,12.720182,76.939513,3
+Kottayam,Pala,6,15-03-2025 18:34,day,Kidnapping,9.457061,75.010915,5
+Idukki,Nedumkandam,10,21-03-2025 10:33,evening,Theft,9.988563,77.020703,2
+Ernakulam,Ernakulam North,9,14-01-2025 17:47,midnight,Fraud,10.046893,76.317182,3
+Ernakulam,Ernakulam North,1,07-09-2024 21:39,midnight,Homicide,9.969641,76.293138,5
+Ernakulam,Ernakulam North,6,30-10-2024 16:15,evening,Theft,10.030065,76.314115,2
+Thrissur,Chalakudy,6,26-06-2024 02:18,day,Cybercrime,11.63452,77.115966,3
+Kozhikode,Feroke,8,28-03-2025 03:10,evening,Fraud,9.407212,77.218363,3
+Ernakulam,Ernakulam North,3,11-12-2024 08:43,day,Cybercrime,10.004577,76.31515,3
+Kozhikode,Feroke,5,27-02-2025 22:05,day,Kidnapping,11.67601,75.934709,5
+Ernakulam,Ernakulam North,3,17-02-2025 12:37,midnight,Kidnapping,10.022398,76.28211,5
+Ernakulam,Ernakulam North,5,06-01-2025 02:04,midnight,Kidnapping,10.01892,76.2514,5
+Idukki,Nedumkandam,8,16-02-2025 05:15,evening,Assault,12.766042,76.483871,4
+Ernakulam,Ernakulam North,2,14-10-2024 19:17,day,Assault,10.005163,76.33897,4
+Ernakulam,Ernakulam North,9,28-02-2025 18:40,day,Robbery,9.956824,76.330728,4
+Ernakulam,Ernakulam North,4,05-07-2024 15:27,midnight,Vandalism,9.996392,76.278305,2
+Ernakulam,Ernakulam North,4,07-12-2024 06:50,day,Cybercrime,9.987716,76.345707,3
+Kottayam,Pala,3,14-09-2024 22:11,day,Kidnapping,11.04012,76.190587,5
+Ernakulam,Ernakulam North,9,03-01-2025 06:47,evening,Fraud,9.96903,76.26917,3
+Ernakulam,Ernakulam North,1,22-04-2025 17:42,midnight,Theft,10.017707,76.322019,2
+Ernakulam,Ernakulam North,8,08-07-2024 01:58,midnight,Theft,9.96883,76.308064,2
+Kasaragod,Kasaragod Town,3,08-08-2024 06:33,day,Robbery,12.458375,77.143913,4
+Ernakulam,Ernakulam North,8,04-10-2024 01:38,day,Kidnapping,9.995545,76.297872,5
+Ernakulam,Ernakulam North,10,28-03-2025 23:22,midnight,Robbery,9.978476,76.332223,4
+Kollam,Karunagappally,4,11-01-2025 17:02,day,Fraud,8.66218,75.818222,3
+Ernakulam,Ernakulam North,7,16-08-2024 16:59,evening,Cybercrime,10.03915,76.299864,3
+Ernakulam,Ernakulam North,3,06-05-2025 11:47,evening,Cybercrime,9.974084,76.301647,3
+Ernakulam,Ernakulam North,9,23-12-2024 23:06,evening,Kidnapping,9.991569,76.3086,5
+Kasaragod,Kasaragod Town,2,04-04-2025 01:51,day,Vandalism,9.148148,75.384857,2
+Ernakulam,Ernakulam North,6,16-02-2025 19:59,day,Kidnapping,10.027466,76.299407,5
+Ernakulam,Ernakulam North,10,01-11-2024 04:05,day,Cybercrime,9.975607,76.328968,3
+Kottayam,Pala,10,18-11-2024 05:47,midnight,Robbery,9.555567,75.142378,4
+Ernakulam,Ernakulam North,4,30-12-2024 03:27,evening,Fraud,10.041526,76.319055,3
+Ernakulam,Ernakulam North,7,19-01-2025 12:36,evening,Cybercrime,9.986373,76.312176,3
+Ernakulam,Ernakulam North,7,26-04-2025 03:22,day,Cybercrime,10.030725,76.346286,3
+Ernakulam,Ernakulam North,2,04-04-2025 20:56,evening,Vandalism,10.025029,76.336369,2
+Ernakulam,Ernakulam North,4,30-11-2024 10:42,midnight,Cybercrime,9.961231,76.331797,3
+Ernakulam,Ernakulam North,2,10-08-2024 05:28,evening,Fraud,10.011359,76.290091,3
+Ernakulam,Ernakulam North,5,18-11-2024 01:40,midnight,Vandalism,10.033073,76.270517,2
+Ernakulam,Ernakulam North,9,14-01-2025 03:17,day,Homicide,10.010753,76.275817,5
+Ernakulam,Ernakulam North,1,07-09-2024 03:46,evening,Vandalism,10.04699,76.339529,2
+Ernakulam,Ernakulam North,5,22-05-2025 17:45,evening,Cybercrime,10.0062,76.263995,3
+Idukki,Nedumkandam,7,18-05-2025 09:07,evening,Theft,10.999843,75.651731,2
+Ernakulam,Ernakulam North,9,30-10-2024 02:18,day,Homicide,9.969023,76.304414,5
+Ernakulam,Ernakulam North,2,30-05-2025 10:36,day,Fraud,9.976849,76.294883,3
+Ernakulam,Ernakulam North,5,30-08-2024 04:49,evening,Fraud,9.970947,76.321637,3
+Ernakulam,Ernakulam North,1,14-09-2024 03:34,midnight,Cybercrime,9.983721,76.276592,3
+Kollam,Karunagappally,3,20-11-2024 23:38,day,Fraud,12.392046,76.865592,3
+Kollam,Karunagappally,2,03-07-2024 10:01,day,Homicide,8.875252,75.25234,5
+Ernakulam,Ernakulam North,5,23-07-2024 11:09,day,Kidnapping,10.00412,76.26945,5
+Ernakulam,Ernakulam North,6,04-09-2024 02:54,evening,Vandalism,10.04792,76.301223,2
+Ernakulam,Ernakulam North,7,06-07-2024 10:10,day,Fraud,10.014464,76.337208,3
+Ernakulam,Ernakulam North,9,14-01-2025 01:21,midnight,Homicide,10.002526,76.331411,5
+Ernakulam,Ernakulam North,10,05-10-2024 14:42,midnight,Fraud,10.044094,76.278757,3
+Ernakulam,Ernakulam North,5,26-05-2025 09:49,day,Homicide,10.016292,76.302712,5
+Ernakulam,Ernakulam North,5,08-02-2025 14:10,midnight,Assault,10.010151,76.347629,4
+Ernakulam,Ernakulam North,8,01-08-2024 23:01,day,Fraud,10.030744,76.323517,3
+Ernakulam,Ernakulam North,5,25-08-2024 07:32,evening,Theft,9.978272,76.326784,2
+Ernakulam,Ernakulam North,3,19-11-2024 09:54,midnight,Fraud,9.979684,76.321456,3
+Ernakulam,Ernakulam North,7,10-07-2024 22:44,day,Homicide,10.004253,76.261432,5
+Malappuram,Manjeri,6,03-09-2024 17:12,day,Fraud,9.651369,76.111876,3
+Ernakulam,Ernakulam North,5,05-04-2025 14:31,evening,Robbery,10.002662,76.258888,4
+Ernakulam,Ernakulam North,2,03-12-2024 23:09,day,Kidnapping,10.003378,76.299376,5
+Ernakulam,Ernakulam North,3,19-08-2024 22:14,day,Assault,9.987729,76.275691,4
+Ernakulam,Ernakulam North,5,20-09-2024 17:38,day,Theft,10.026303,76.322794,2
+Ernakulam,Ernakulam North,3,16-05-2025 09:23,midnight,Assault,10.010941,76.340377,4
+Ernakulam,Ernakulam North,7,13-03-2025 18:17,day,Homicide,9.988561,76.33336,5
+Idukki,Nedumkandam,6,22-12-2024 17:31,midnight,Assault,9.001098,76.317454,4
+Kasaragod,Kasaragod Town,1,30-07-2024 02:25,evening,Robbery,10.990567,75.681132,4
+Thrissur,Chalakudy,10,10-07-2024 00:57,day,Vandalism,12.331725,75.125078,2
+Kozhikode,Feroke,9,15-06-2024 06:58,midnight,Cybercrime,8.632252,75.239093,3
+Ernakulam,Ernakulam North,7,17-08-2024 04:58,midnight,Cybercrime,10.042393,76.340952,3
+Ernakulam,Ernakulam North,1,17-09-2024 14:32,day,Cybercrime,10.004505,76.323879,3
+Kollam,Karunagappally,8,21-05-2025 00:20,evening,Kidnapping,12.896668,76.517313,5
+Ernakulam,Ernakulam North,6,12-12-2024 16:10,evening,Fraud,9.998732,76.261697,3
+Ernakulam,Ernakulam North,6,22-05-2025 20:36,evening,Robbery,10.021803,76.266275,4
+Kollam,Karunagappally,8,05-11-2024 05:39,day,Theft,11.720039,77.367833,2
+Thrissur,Chalakudy,8,22-10-2024 13:17,midnight,Theft,10.267453,76.930725,2
+Ernakulam,Ernakulam North,4,17-06-2024 14:29,evening,Fraud,9.981188,76.313238,3
+Ernakulam,Ernakulam North,1,19-03-2025 14:30,midnight,Robbery,9.989078,76.33009,4
+Kasaragod,Kasaragod Town,1,06-02-2025 13:48,evening,Cybercrime,12.203913,76.048767,3
+Ernakulam,Ernakulam North,6,14-08-2024 04:09,day,Robbery,10.035903,76.291365,4
