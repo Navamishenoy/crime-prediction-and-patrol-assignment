@@ -1,0 +1,374 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kerala Police Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .dashboard-header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar {
+            background-color: var(--primary-color);
+            color: white;
+            min-height: 100vh;
+            padding: 0;
+        }
+        
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.75rem 1.5rem;
+            border-left: 3px solid transparent;
+        }
+        
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .sidebar .nav-link i {
+            width: 20px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            border-radius: 10px 10px 0 0 !important;
+        }
+        
+        #map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #district-map {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .map-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        
+        .stat-card .label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .trend-up {
+            color: var(--accent-color);
+        }
+        
+        .trend-down {
+            color: var(--success-color);
+        }
+        
+        .trend-stable {
+            color: var(--warning-color);
+        }
+        
+        .crime-item {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s;
+        }
+        
+        .crime-item:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .crime-item .badge {
+            font-weight: 500;
+            padding: 0.35em 0.65em;
+        }
+        
+        .crime-item .time {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+        
+        .district-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .district-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .district-item:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .district-name {
+            font-weight: 500;
+        }
+        
+        .district-cases {
+            font-weight: 600;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4><i class="fas fa-map-marked-alt me-2"></i> Patrol Suggestions for {{ police_station.jurisdiction_area }}</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        These suggestions are based on crime patterns from the last 7 days.
+                        {% if time_period == "night" %}
+                        <strong>Night patrol recommendations</strong> are highlighted.
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Hotspot Areas -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-warning text-white">
+                    <i class="fas fa-fire me-2"></i> Crime Hotspots
+                </div>
+                <div class="card-body">
+                    {% if hotspots %}
+                    <div class="list-group">
+                        {% for hotspot in hotspots %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5>{{ hotspot.location__area }}</h5>
+                                    <div>
+                                        <span class="badge bg-danger me-2">{{ hotspot.total_crimes }} crimes</span>
+                                        <span class="badge bg-primary">Avg. severity: {{ hotspot.avg_severity|floatformat:1 }}</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-primary" 
+                                        onclick="focusOnMap({{ hotspot.location__latitude }}, {{ hotspot.location__longitude }})">
+                                    <i class="fas fa-map-marker-alt"></i> View
+                                </button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        No major hotspots identified in your jurisdiction.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Severe Crimes -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <i class="fas fa-exclamation-triangle me-2"></i> Recent Severe Crimes
+                </div>
+                <div class="card-body">
+                    {% if recent_severe %}
+                    <div class="list-group">
+                        {% for crime in recent_severe %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5>{{ crime.crime_category.name }} (Severity: {{ crime.get_severity_level_display }})</h5>
+                                    <div>
+                                        <span class="text-muted">
+                                            <i class="fas fa-map-marker-alt"></i> {{ crime.location.area }}
+                                        </span>
+                                        <span class="text-muted ms-3">
+                                            <i class="fas fa-clock"></i> {{ crime.date_occurred|date:"M d, Y H:i" }}
+                                        </span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-primary" 
+                                        onclick="focusOnMap({{ crime.location.latitude }}, {{ crime.location.longitude }})">
+                                    <i class="fas fa-map-marker-alt"></i> View
+                                </button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        No severe crimes reported in the last 3 days.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time-based Suggestions -->
+    {% if time_based_hotspots %}
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <i class="fas fa-clock me-2"></i> Time-based Patrol Recommendations
+                </div>
+                <div class="card-body">
+                    <p>Based on historical crime patterns during this time period:</p>
+                    <ul class="list-group">
+                        {% for hotspot in time_based_hotspots %}
+                        <li class="list-group-item">
+                            <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                            {{ hotspot.location__area }} ({{ hotspot.count }} recent crimes)
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Map Visualization -->
+   <div class="card">
+    <div class="card-header">
+        <i class="fas fa-map me-2"></i> Suggested Patrol Areas Map
+    </div>
+    <div class="card-body p-0">
+        <div id="patrol-map" style="height: 500px;">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading map...</span>
+                </div>
+            </div>
+        </div>
+        <div class="p-3 small text-muted">
+            <i class="fas fa-info-circle"></i> Station location approximated to {{ police_station.jurisdiction_area }} center
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mapElement = document.getElementById('patrol-map');
+        
+        // Use the coordinates from Django context
+        const patrolMap = L.map('patrol-map').setView(
+            [{{ police_station.latitude }}, {{ police_station.longitude }}], 
+            12
+        );
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(patrolMap);
+        
+        // Add station marker with popup showing actual address
+        L.marker([{{ police_station.latitude }}, {{ police_station.longitude }}])
+            .addTo(patrolMap)
+            .bindPopup(`
+                <b>{{ police_station.name }}</b><br>
+                {{ police_station.jurisdiction_area }}<br>
+                {{ police_station.district }} District
+            `);
+        
+        // Add crime hotspots
+        {% for hotspot in hotspots %}
+            L.circleMarker([
+                {{ hotspot.location__latitude }},
+                {{ hotspot.location__longitude }}
+            ], {
+                radius: 8 + Math.min({{ hotspot.total_crimes }}, 10),
+                fillColor: "#e74c3c",
+                color: "#fff",
+                weight: 1,
+                fillOpacity: 0.7
+            }).addTo(patrolMap)
+            .bindPopup(`
+                <b>{{ hotspot.location__area }}</b><br>
+                {{ hotspot.total_crimes }} recent crimes<br>
+                Avg. severity: {{ hotspot.avg_severity|floatformat:1 }}
+            `);
+        {% endfor %}
+    });
+</script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+</html>
