@@ -1,0 +1,17 @@
+{% extends "shared/base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h4>Crime Hotspot Map (Last {{ request.GET.days|default:"30" }} Days)</h4>
+    <form method="get">
+        <label for="days">Select Time Range:</label>
+        <select name="days" onchange="this.form.submit()">
+            <option value="7" {% if request.GET.days == '7' %}selected{% endif %}>Last 7 days</option>
+            <option value="30" {% if request.GET.days == '30' %}selected{% endif %}>Last 30 days</option>
+            <option value="90" {% if request.GET.days == '90' %}selected{% endif %}>Last 3 months</option>
+        </select>
+    </form>
+    <div class="mt-3">
+        {{ map|safe }}
+    </div>
+</div>
+{% endblock %}

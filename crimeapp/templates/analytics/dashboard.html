@@ -1,0 +1,318 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Crime Analytics Dashboard</h1>
+        <div class="d-flex">
+            <div class="dropdown me-2">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="timeRangeDropdown" data-bs-toggle="dropdown">
+                    <i class="fas fa-calendar me-1"></i> Last 30 Days
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
+                    <li><a class="dropdown-item" href="#">Last 30 Days</a></li>
+                    <li><a class="dropdown-item" href="#">Last 90 Days</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-primary">
+                <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+            </button>
+            &nbsp;
+                <a href="{% url 'hotspot_map' %}" class="btn btn-primary ">
+                     Hotspots
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ total_cases }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Solved Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ solved_cases }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Pending Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ pending_cases }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-hourglass-half fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card stat-card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                High Priority</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ high_priority }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-exclamation-triangle fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row">
+        <!-- Pie Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="chart-container">
+                <h5 class="chart-title"><i class="fas fa-chart-pie me-2"></i>Case Status Distribution</h5>
+                <div class="chart-area">
+                    <canvas id="statusPie"></canvas>
+                </div>
+                <div class="mt-3 text-center small">
+                    <span class="me-3"><i class="fas fa-circle text-success me-1"></i> Solved</span>
+                    <span class="me-3"><i class="fas fa-circle text-warning me-1"></i> Pending</span>
+                    <span><i class="fas fa-circle text-danger me-1"></i> Rejected</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="chart-container">
+                <h5 class="chart-title"><i class="fas fa-chart-bar me-2"></i>Crime Types</h5>
+                <div class="chart-area">
+                    <canvas id="typeBar"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Line Chart Row -->
+
+    <!-- Recent Cases Table -->
+   <div class="container mt-4">
+    <h4>Monthly Crime Trends</h4>
+    <canvas id="crimeTrendChart" height="100"></canvas>
+</div>
+</div>
+<script>
+    const ctx = document.getElementById('crimeTrendChart').getContext('2d');
+    const crimeTrendChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ months|safe }},
+            datasets: [{
+                label: 'Crimes per Month',
+                data: {{ counts|safe }},
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: 'red'
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Crimes'
+                    }
+                }
+            },
+            responsive: true
+        }
+    });
+</script>
+
+<script>
+    // Pie Chart - Case Status
+    new Chart(document.getElementById('statusPie'), {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys({{ status_data|safe }}),
+            datasets: [{
+                data: Object.values({{ status_data|safe }}),
+                backgroundColor: ['#1cc88a', '#f6c23e', '#e74a3b'],
+                hoverBackgroundColor: ['#17a673', '#dda20a', '#be2617'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                },
+            },
+            cutout: '70%',
+        }
+    });
+
+    // Bar Chart - Crime Types
+    new Chart(document.getElementById('typeBar'), {
+        type: 'bar',
+        data: {
+            labels: {{ type_labels|safe }},
+            datasets: [{
+                label: 'Number of Cases',
+                data: {{ type_data|safe }},
+                backgroundColor: '#4e73df',
+                hoverBackgroundColor: '#2e59d9',
+                hoverBorderColor: '#2e59d9',
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        maxRotation: 45,
+                        minRotation: 45
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                    },
+                    ticks: {
+                        stepSize: 3
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                },
+            }
+        }
+    });
+
+    // Line Chart - Monthly Trend
+    new Chart(document.getElementById('monthLine'), {
+        type: 'line',
+        data: {
+            labels: {{ month_labels|safe }},
+            datasets: [{
+                label: 'Cases Reported',
+                data: {{ month_data|safe }},
+                backgroundColor: 'rgba(78, 115, 223, 0.05)',
+                borderColor: '#4e73df',
+                pointBackgroundColor: '#4e73df',
+                pointBorderColor: '#4e73df',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: '#4e73df',
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: "rgb(255,255,255)",
+                    bodyFontColor: "#858796",
+                    borderColor: '#dddfeb',
+                    borderWidth: 1,
+                    xPadding: 15,
+                    yPadding: 15,
+                    displayColors: false,
+                    caretPadding: 10,
+                },
+            }
+        }
+    });
+</script>
+{% endblock %}

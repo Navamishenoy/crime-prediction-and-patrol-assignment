@@ -1,0 +1,49 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h4>Monthly Crime Trends</h4>
+    <canvas id="crimeTrendChart" height="100"></canvas>
+</div>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('crimeTrendChart').getContext('2d');
+    const crimeTrendChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ months|safe }},
+            datasets: [{
+                label: 'Crimes per Month',
+                data: {{ counts|safe }},
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 2,
+                tension: 0.3,
+                fill: true,
+                pointRadius: 4,
+                pointBackgroundColor: 'red'
+            }]
+        },
+        options: {
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Crimes'
+                    }
+                }
+            },
+            responsive: true
+        }
+    });
+</script>
+{% endblock %}
