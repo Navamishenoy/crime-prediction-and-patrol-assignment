@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kerala District Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #controls {
+            padding: 10px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ccc;
+        }
+        #map {
+            flex-grow: 1;
+        }
+        select {
+            padding: 8px;
+            margin: 5px;
+            width: 300px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map-container">
+        <div id="controls">
+            <label for="district">District:</label>
+            <select id="district">
+                <option value="">Select a district</option>
+            </select>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <!-- Script for map functionality -->
+    <script>
+        // District data with approximate center coordinates
+        const districtData = {
+            "Thiruvananthapuram": { center: [8.5241, 76.9366], zoom: 11 },
+            "Ernakulam": { center: [9.9816, 76.2999], zoom: 11 },
+            "Kozhikode": { center: [11.2588, 75.7804], zoom: 11 },
+            "Kannur": { center: [11.8745, 75.3704], zoom: 11 },
+            "Kollam": { center: [8.8932, 76.6141], zoom: 11 },
+            "Alappuzha": { center: [9.4980, 76.3388], zoom: 11 },
+            "Idukki": { center: [9.8496, 76.9750], zoom: 10 },
+            "Palakkad": { center: [10.7867, 76.6548], zoom: 10 },
+            "Malappuram": { center: [11.0510, 76.0711], zoom: 10 },
+            "Thrissur": { center: [10.5276, 76.2144], zoom: 11 },
+            "Kottayam": { center: [9.5916, 76.5222], zoom: 11 },
+            "Pathanamthitta": { center: [9.2648, 76.7870], zoom: 11 },
+            "Wayanad": { center: [11.6850, 76.1320], zoom: 10 },
+            "Kasaragod": { center: [12.4996, 74.9869], zoom: 11 }
+        };
+
+        // Initialize map centered on Kerala
+        const map = L.map('map').setView([10.85, 76.27], 7);
+        
+        // Add base tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Populate district dropdown
+        const districtSelect = document.getElementById('district');
+        Object.keys(districtData).sort().forEach(district => {
+            const option = document.createElement('option');
+            option.value = district;
+            option.textContent = district;
+            districtSelect.appendChild(option);
+        });
+
+        // Zoom to selected district
+        districtSelect.addEventListener('change', function() {
+            const selectedDistrict = this.value;
+            if (selectedDistrict && districtData[selectedDistrict]) {
+                const { center, zoom } = districtData[selectedDistrict];
+                map.flyTo(center, zoom);
+            }
+        });
+    </script>
+</body>
+</html>
