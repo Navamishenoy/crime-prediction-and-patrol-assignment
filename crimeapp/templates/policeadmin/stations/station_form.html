@@ -1,0 +1,231 @@
+<h2>{{ form.instance.pk|yesno:"Edit,Add" }} Police Station</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+<a href="{% url 'station_list' %}">Back</a>
+
+<h2>Police Stations</h2>
+<a href="{% url 'add_station' %}">Add New Station</a>
+<ul>
+  {% for station in stations %}
+    <li>{{ station.name }} —
+      <a href="">Edit</a> |
+      <a href="">Delete</a>
+    </li>
+  {% endfor %}
+</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crime Prediction - Police Stations</title>
+    <link type="text/css" href="../../vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="../static/css/volt.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* Add to your CSS file */
+.modal-content input, 
+.modal-content select, 
+.modal-content textarea {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+.modal-content .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875em;
+}
+</style>
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white">
+        <div class="sidebar-inner px-4 pt-3">
+            <div class="user-card pb-4">
+                <div class="d-flex align-items-center">
+                    <div class="avatar-lg me-4">
+                        <img src="../../assets/img/team/profile-picture-3.jpg" class="rounded-circle border-white" alt="Admin">
+                    </div>
+                    <div class="d-block">
+                        <h2 class="h5 mb-3">Welcome, {{ request.user.username }}</h2>
+                        <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm">
+                            <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                            </svg>            
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="stations.html" class="nav-link">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2H4a1 1 0 010-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                        </svg>
+                        Police Stations
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="officers.html" class="nav-link">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v1h8v-1zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-1a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v1h-3zM4.75 12.094A5.973 5.973 0 004 15v1H1v-1a3 3 0 013.75-2.906z"></path>
+                        </svg>
+                        Police Officers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cases.html" class="nav-link">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 100 2h4a1 1 0 100-2H8z" clip-rule="evenodd"></path>
+                        </svg>
+                        Case Records
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="reports.html" class="nav-link">
+                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd"></path>
+                        </svg>
+                        Crime Reports
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
+            <div class="container-fluid px-0">
+                <form class="navbar-search form-inline">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search stations...">
+                    </div>
+                </form>
+            </div>
+        </nav>
+
+        <!-- Stations Content -->
+        <div class="py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3">Police Stations</h1>
+                <button type="button" class="btn btn-primary" onclick="openStationFormModal(false)">
+    <svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+    </svg>
+    Add New Station
+</button>
+            </div>
+            
+            
+            <!-- Stations Table -->
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Station ID</th>
+                                    <th>Station Name</th>
+                                    <th>Location</th>
+                                    <th>Officers</th>
+                                    <th>Contact</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 {% for station in stations %}
+                                 <td>{{ station.id }}</td>
+                                    <td>{{ station.name }}</td>
+                                    <td>{{ station.jurisdiction_area }}</td>
+                                    <td>{{ officer_count }}</td>
+                                    <td>{{ station.contact_number }}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary" 
+   onclick="openStationFormModal(true, '{{ station.id }}')">Edit</a>
+                                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                                    </td>
+                                    
+                                </tr>
+  {% endfor %}
+                                <tr>
+                                    <td>PS-001</td>
+                                    <td>Central Police Station</td>
+                                    <td>Main Street</td>
+                                    <td>20</td>
+                                    <td>+1 555 123 4567</td>
+                                    <td>
+                                        <a href="edit_station.html" class="btn btn-sm btn-outline-primary">Edit</a>
+                                        <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+                                    </td>
+                                </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center mt-4">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Add Station Modal -->
+<div class="modal fade" id="stationFormModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ form.instance.pk|yesno:"Edit,Add" }} Police Station</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+           <form method="post" action="{% url 'add_station' %}" id="stationForm">
+
+    {% csrf_token %}
+    <div class="modal-body">
+        {{ form.as_p }}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Station</button>
+    </div>
+</form>
+</div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Core JS -->
+    <script src="../../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/volt.js"></script>
+</body>
+</html>
