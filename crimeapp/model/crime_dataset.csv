@@ -1,0 +1,300 @@
+district,block,ward,start_date,shift,crime_type,latitude,longitude,severity_level,assigned_police_station
+Malappuram,Perinthalmanna,1,16-04-2020 22:44,midnight,Fraud,12.7489986,77.00816378,3,Perinthalmanna Police Station
+Idukki,Nedumkandam,3,02-10-2022 08:51,midnight,Cybercrime,9.74525917,77.67823612,3,Nedumkandam Police Station
+Palakkad,Mannarkkad,7,07-04-2024 02:33,day,Cybercrime,12.75954836,76.9747899,3,Mannarkkad Police Station
+Kasaragod,Kasaragod Town,8,29-05-2023 19:33,evening,Homicide,10.91672179,75.13652735,5,Kasaragod Town Police Station
+Kottayam,Pala,4,01-05-2020 07:21,midnight,Assault,10.72638917,75.87105249,4,Pala Police Station
+Kannur,Payyannur,7,20-11-2024 11:16,evening,Fraud,12.68450595,76.2014443,3,Payyannur Police Station
+Alappuzha,Ambalapuzha,6,18-02-2024 15:03,midnight,Homicide,11.24724738,76.03542643,5,Ambalapuzha Police Station
+Thiruvananthapuram,Kowdiar,5,03-03-2020 23:18,midnight,Fraud,11.65126675,76.66353278,3,Kowdiar Police Station
+Malappuram,Perinthalmanna,2,11-07-2021 07:40,midnight,Vandalism,12.71935356,77.07197235,2,Perinthalmanna Police Station
+Malappuram,Kottakkal,6,07-09-2024 08:06,midnight,Assault,8.524675597,75.5808931,4,Perinthalmanna Police Station
+Thiruvananthapuram,Kazhakootam,4,04-02-2024 17:53,midnight,Kidnapping,8.60173733,77.63649207,4,Kazhakootam Police Station
+Wayanad,Meppadi,8,05-06-2024 23:45,evening,Kidnapping,8.838175112,75.27462685,4,Sulthan Bathery Police Station
+Wayanad,Mananthavady,1,26-12-2021 10:31,evening,Cybercrime,12.24887583,76.9962751,3,Sulthan Bathery Police Station
+Wayanad,Mananthavady,3,14-07-2021 08:01,evening,Kidnapping,12.23800644,76.99182646,4,Sulthan Bathery Police Station
+Palakkad,Shoranur,2,02-02-2020 16:47,evening,Kidnapping,10.2012402,77.15816768,4,Shoranur Police Station
+Kasaragod,Uppala,6,12-12-2024 15:38,evening,Vandalism,8.845601878,75.32576241,2,Kasaragod Town Police Station
+Idukki,Munnar,3,11-12-2021 22:50,evening,Theft,11.72024022,75.39513559,2,Nedumkandam Police Station
+Thiruvananthapuram,Kazhakootam,6,07-05-2024 01:34,day,Cybercrime,8.30941599,77.13246242,3,Kazhakootam Police Station
+Kollam,Punalur,6,01-02-2024 09:39,midnight,Homicide,10.1468792,77.75643778,5,Punalur Police Station
+Kollam,Karunagappally,3,30-08-2024 14:17,day,Robbery,10.5466777,76.97617412,4,Punalur Police Station
+Thiruvananthapuram,Pattom,8,18-07-2021 05:43,midnight,Theft,11.98281635,76.65330366,2,Pattom Police Station
+Alappuzha,Mavelikkara,2,01-07-2024 22:57,day,Homicide,9.176790386,75.89663382,5,Mavelikkara Police Station
+Kozhikode,Thamarassery,1,17-12-2020 11:26,midnight,Assault,11.09378309,76.14523442,4,Kunnamangalam Police Station
+Palakkad,Shoranur,2,16-06-2021 16:37,evening,Theft,10.25894191,77.15351867,2,Shoranur Police Station
+Thiruvananthapuram,Pattom,8,23-03-2023 08:19,midnight,Vandalism,8.327983874,77.0525299,2,Pattom Police Station
+Thrissur,Wadakkanchery,3,09-03-2021 00:59,day,Homicide,10.50570594,75.68403747,5,Thrissur Town Police Station
+Kottayam,Vaikom,3,06-04-2023 20:38,day,Assault,8.885004071,75.03520329,4,Pala Police Station
+Kozhikode,Thamarassery,1,30-08-2023 07:38,midnight,Cybercrime,11.10889753,76.15031981,3,Kunnamangalam Police Station
+Palakkad,Shoranur,1,08-04-2022 20:02,midnight,Robbery,8.660871716,76.34383224,4,Shoranur Police Station
+Thrissur,Kodungallur,7,14-12-2020 12:10,midnight,Assault,8.30148116,75.24198366,4,Thrissur Town Police Station
+Thiruvananthapuram,Kowdiar,7,01-01-2025 11:08,midnight,Kidnapping,11.61863913,76.6525486,4,Kowdiar Police Station
+Kottayam,Changanassery,5,18-10-2022 13:01,evening,Fraud,12.35495043,76.06213401,3,Pala Police Station
+Pathanamthitta,Pandalam,6,26-04-2022 06:25,evening,Assault,11.96726441,77.62615094,4,Pathanamthitta Town Police Station
+Pathanamthitta,Ranni,5,05-05-2023 11:12,day,Assault,12.80521557,75.3319297,4,Pathanamthitta Town Police Station
+Thiruvananthapuram,Pattom,7,13-02-2025 00:52,midnight,Robbery,12.03653659,76.60112748,4,Pattom Police Station
+Thiruvananthapuram,Pattom,7,24-05-2019 08:18,midnight,Fraud,8.32252093,77.03750272,3,Pattom Police Station
+Kollam,Punalur,2,24-09-2021 22:40,midnight,Kidnapping,11.60783077,76.93096455,4,Punalur Police Station
+Malappuram,Ponnani,8,12-12-2021 06:28,evening,Homicide,12.72776018,76.36468445,5,Perinthalmanna Police Station
+Wayanad,Vythiri,4,20-02-2025 02:39,day,Homicide,9.152443196,77.25641113,5,Sulthan Bathery Police Station
+Thrissur,Irinjalakuda,7,06-05-2020 17:27,evening,Assault,11.73779126,76.3525194,4,Thrissur Town Police Station
+Wayanad,Meppadi,7,08-04-2020 16:25,day,Vandalism,11.8684074,77.07356112,2,Sulthan Bathery Police Station
+Pathanamthitta,Thiruvalla,6,24-03-2021 18:54,evening,Vandalism,9.027454151,76.91865675,2,Pathanamthitta Town Police Station
+Thrissur,Kodungallur,7,13-11-2021 04:06,midnight,Fraud,8.323440058,75.22225392,3,Thrissur Town Police Station
+Idukki,Thodupuzha,8,03-01-2020 09:40,midnight,Fraud,8.644089179,76.9718889,3,Nedumkandam Police Station
+Kasaragod,Kasaragod Town,8,14-10-2022 02:34,evening,Kidnapping,10.88489985,75.17318826,4,Kasaragod Town Police Station
+Wayanad,Meppadi,1,24-11-2021 21:26,day,Robbery,11.62986691,75.07025494,4,Sulthan Bathery Police Station
+Wayanad,Meppadi,1,15-02-2021 23:46,day,Cybercrime,11.60916341,75.02490481,3,Sulthan Bathery Police Station
+Kannur,Thalassery,8,04-09-2022 02:33,midnight,Homicide,12.79303444,77.6761036,5,Payyannur Police Station
+Wayanad,Meppadi,2,25-03-2020 18:40,day,Robbery,11.62528258,75.0127975,4,Sulthan Bathery Police Station
+Kollam,Karunagappally,7,13-09-2023 06:56,evening,Theft,11.52806812,75.6987927,2,Punalur Police Station
+Thiruvananthapuram,Pattom,8,30-04-2022 12:34,midnight,Homicide,8.365033956,77.08376234,5,Pattom Police Station
+Ernakulam,Fort Kochi,5,18-02-2019 19:50,day,Robbery,11.56395696,75.31962515,4,West Station
+Wayanad,Sulthan Bathery,8,17-05-2020 11:05,midnight,Homicide,10.68821656,75.40274954,5,Sulthan Bathery Police Station
+Palakkad,Shoranur,2,01-03-2025 20:20,midnight,Cybercrime,8.699411327,76.3181166,3,Shoranur Police Station
+Alappuzha,Ambalapuzha,6,27-01-2024 18:17,midnight,Theft,8.91738611,75.68355597,2,Ambalapuzha Police Station
+Kollam,Karunagappally,5,21-06-2019 16:18,day,Vandalism,10.54565447,76.9931079,2,Punalur Police Station
+Pathanamthitta,Ranni,2,05-01-2022 01:35,evening,Vandalism,9.692412656,76.88981382,2,Pathanamthitta Town Police Station
+Kollam,Karunagappally,5,04-08-2020 05:08,evening,Cybercrime,11.52450387,75.68516828,3,Punalur Police Station
+Malappuram,Ponnani,7,04-05-2019 19:48,midnight,Kidnapping,10.368821,76.1324506,4,Perinthalmanna Police Station
+Thiruvananthapuram,Kowdiar,7,05-05-2022 10:06,midnight,Theft,11.64889322,76.65178971,2,Kowdiar Police Station
+Kannur,Mattannur,2,23-04-2025 19:57,day,Assault,12.07793749,75.24641592,4,Payyannur Police Station
+Ernakulam,Vytilla,2,25-06-2024 07:48,midnight,Robbery,9.306911031,77.06572637,4,Vytilla Police Station
+Ernakulam,Ernakulam Town,4,04-09-2021 00:12,day,Theft,9.083554548,75.01281855,2,West Station
+Ernakulam,Ernakulam Town,7,14-06-2024 10:56,day,Kidnapping,10.62754198,77.62298622,4,West Station
+Kollam,Punalur,1,28-07-2024 02:05,midnight,Kidnapping,11.6549175,76.92780935,4,Punalur Police Station
+Thrissur,Kodungallur,9,05-04-2022 13:59,midnight,Cybercrime,8.296114342,75.25112611,3,Thrissur Town Police Station
+Malappuram,Manjeri,6,28-06-2020 16:20,day,Homicide,10.76332039,75.39482036,5,Perinthalmanna Police Station
+Kannur,Thalassery,6,11-04-2020 23:53,evening,Theft,10.22497341,76.12533662,2,Payyannur Police Station
+Malappuram,Kottakkal,7,02-11-2019 21:29,midnight,Robbery,8.521849172,75.58555184,4,Perinthalmanna Police Station
+Kollam,Punalur,6,15-07-2020 19:37,day,Theft,9.241117436,75.77918885,2,Punalur Police Station
+Thiruvananthapuram,Kowdiar,8,18-12-2021 11:27,midnight,Fraud,11.05935313,76.21439498,3,Kowdiar Police Station
+Alappuzha,Mavelikkara,2,18-01-2025 23:29,day,Homicide,9.205551142,75.85142407,5,Mavelikkara Police Station
+Kozhikode,Thamarassery,1,09-04-2022 02:31,midnight,Robbery,11.07765711,76.16987522,4,Kunnamangalam Police Station
+Kollam,Paravur,6,21-10-2023 13:47,day,Vandalism,12.4676756,75.8981928,2,Punalur Police Station
+Pathanamthitta,Thiruvalla,6,04-05-2023 06:15,evening,Robbery,8.987339721,76.91962147,4,Pathanamthitta Town Police Station
+Idukki,Thodupuzha,6,16-08-2021 02:26,midnight,Assault,9.155836273,76.23247849,4,Nedumkandam Police Station
+Thrissur,Kodungallur,8,12-07-2021 07:42,midnight,Cybercrime,8.329057663,75.25013106,3,Thrissur Town Police Station
+Kasaragod,Kasaragod Town,5,21-07-2022 20:29,evening,Assault,10.41424493,75.08368695,4,Kasaragod Town Police Station
+Palakkad,Mannarkkad,6,29-06-2023 18:23,midnight,Robbery,10.62347369,75.60518048,4,Mannarkkad Police Station
+Kozhikode,Vadakara,5,26-05-2024 05:48,evening,Homicide,11.14994467,75.78674893,5,Kunnamangalam Police Station
+Kannur,Thalassery,7,25-09-2022 11:17,midnight,Theft,12.82856968,77.67206127,2,Payyannur Police Station
+Palakkad,Shoranur,7,03-12-2022 22:02,midnight,Vandalism,12.27379797,76.64282481,2,Shoranur Police Station
+Malappuram,Perinthalmanna,1,16-05-2022 00:27,evening,Theft,8.25889822,75.40241057,2,Perinthalmanna Police Station
+Kollam,Paravur,2,30-06-2024 14:11,day,Homicide,11.54120995,75.03437845,5,Punalur Police Station
+Thrissur,Chalakudy,4,10-02-2019 12:27,day,Robbery,10.81248715,75.39220479,4,Thrissur Town Police Station
+Palakkad,Ottapalam,5,10-11-2019 18:39,evening,Kidnapping,12.62823557,77.01667962,4,Ottapalam Police Station
+Thiruvananthapuram,Kazhakootam,6,06-08-2021 04:57,day,Theft,8.394185301,77.11317921,2,Kazhakootam Police Station
+Ernakulam,Ernakulam Town,9,29-07-2020 17:20,day,Kidnapping,10.61670863,77.60102346,4,West Station
+Kozhikode,Thamarassery,1,19-06-2022 13:47,midnight,Theft,11.0389629,76.17216897,2,Kunnamangalam Police Station
+Kasaragod,Cheruvathur,1,06-01-2025 01:03,evening,Theft,9.02392156,74.89875856,2,Kasaragod Town Police Station
+Pathanamthitta,Thiruvalla,1,27-03-2020 16:24,midnight,Vandalism,12.98142789,76.6766477,2,Pathanamthitta Town Police Station
+Malappuram,Perinthalmanna,1,17-03-2019 02:10,day,Cybercrime,9.490575639,74.92282564,3,Perinthalmanna Police Station
+Ernakulam,Ernakulam Town,9,15-05-2020 12:41,day,Cybercrime,10.59908396,77.63021261,3,West Station
+Pathanamthitta,Thiruvalla,2,27-03-2020 09:01,midnight,Fraud,12.9453925,76.66460144,3,Pathanamthitta Town Police Station
+Palakkad,Mannarkkad,7,21-05-2024 11:11,day,Assault,12.8086634,76.98858607,4,Mannarkkad Police Station
+Pathanamthitta,Ranni,1,18-10-2022 18:25,midnight,Homicide,8.854579671,76.50201475,5,Pathanamthitta Town Police Station
+Ernakulam,Ernakulam Town,4,08-08-2022 07:06,day,Homicide,9.097878358,75.04019015,5,West Station
+Thiruvananthapuram,Kowdiar,6,29-12-2021 21:06,midnight,Homicide,11.07326451,76.24806131,5,Kowdiar Police Station
+Palakkad,Mannarkkad,5,17-03-2022 16:22,midnight,Fraud,10.61175084,75.57342461,3,Mannarkkad Police Station
+Alappuzha,Mavelikkara,1,27-01-2025 03:19,day,Cybercrime,8.906598796,77.37457816,3,Mavelikkara Police Station
+Thrissur,Wadakkanchery,7,26-10-2023 00:54,evening,Robbery,12.14254751,75.52186523,4,Thrissur Town Police Station
+Wayanad,Meppadi,2,20-06-2023 11:20,day,Kidnapping,11.60045159,75.05381948,4,Sulthan Bathery Police Station
+Idukki,Munnar,3,01-07-2020 02:45,evening,Vandalism,11.76602617,75.37523194,2,Nedumkandam Police Station
+Malappuram,Manjeri,6,29-06-2022 00:24,day,Kidnapping,10.79326232,75.40175414,4,Perinthalmanna Police Station
+Kasaragod,Cheruvathur,8,16-03-2022 16:56,day,Robbery,10.65951622,77.51027315,4,Kasaragod Town Police Station
+Kasaragod,Kasaragod Town,2,05-10-2021 16:57,midnight,Vandalism,12.78517459,76.44572464,2,Kasaragod Town Police Station
+Kasaragod,Kasaragod Town,8,03-10-2024 09:05,evening,Fraud,10.9015016,75.12690208,3,Kasaragod Town Police Station
+Kannur,Payyannur,6,11-06-2019 06:28,evening,Robbery,12.70022709,76.2148984,4,Payyannur Police Station
+Malappuram,Perinthalmanna,1,29-03-2023 06:12,evening,Homicide,8.237454963,75.40584089,5,Perinthalmanna Police Station
+Wayanad,Meppadi,9,10-09-2021 15:51,evening,Assault,8.830800186,75.3250813,4,Sulthan Bathery Police Station
+Alappuzha,Kayamkulam,8,15-01-2025 17:40,midnight,Theft,8.854301204,77.33337489,2,Kayamkulam Police Station
+Alappuzha,Ambalapuzha,6,08-11-2024 08:15,midnight,Kidnapping,8.939782588,75.69740129,4,Ambalapuzha Police Station
+Wayanad,Meppadi,2,12-03-2020 14:49,day,Cybercrime,11.59760565,75.1020658,3,Sulthan Bathery Police Station
+Thrissur,Chalakudy,8,01-11-2022 11:46,day,Cybercrime,9.873087193,76.06446051,3,Thrissur Town Police Station
+Thrissur,Guruvayur,2,25-05-2022 02:05,midnight,Fraud,12.22900076,76.30162281,3,Thrissur Town Police Station
+Idukki,Thodupuzha,8,19-02-2024 10:52,midnight,Vandalism,8.653946901,76.97453771,2,Nedumkandam Police Station
+Kozhikode,Feroke,7,09-03-2023 17:09,evening,Cybercrime,12.88621988,75.10338818,3,Kunnamangalam Police Station
+Kozhikode,Kunnamangalam,7,25-06-2022 16:00,evening,Homicide,12.82946893,75.03172537,5,Kunnamangalam Police Station
+Idukki,Thodupuzha,4,23-12-2023 06:57,midnight,Kidnapping,9.121470946,76.26546489,4,Nedumkandam Police Station
+Alappuzha,Mavelikkara,2,06-04-2025 21:39,day,Robbery,9.170065406,75.89485237,4,Mavelikkara Police Station
+Kollam,Punalur,4,01-07-2021 20:10,midnight,Homicide,10.14067559,77.72780894,5,Punalur Police Station
+Kollam,Paravur,2,06-08-2023 11:09,midnight,Fraud,12.98877858,75.39625627,3,Punalur Police Station
+Kollam,Punalur,1,06-06-2020 22:18,midnight,Homicide,11.59366037,76.91884908,5,Punalur Police Station
+Alappuzha,Kayamkulam,8,14-12-2022 02:07,midnight,Robbery,8.864327101,77.32796515,4,Kayamkulam Police Station
+Thrissur,Kodungallur,8,17-02-2020 06:38,midnight,Assault,8.327743157,75.26063256,4,Thrissur Town Police Station
+Alappuzha,Kayamkulam,9,18-03-2019 14:30,midnight,Fraud,8.881473636,77.31685859,3,Kayamkulam Police Station
+Kozhikode,Feroke,8,22-11-2024 07:35,evening,Assault,12.8814986,75.11402444,4,Kunnamangalam Police Station
+Alappuzha,Ambalapuzha,2,24-05-2022 07:27,evening,Theft,9.092069743,76.64760033,2,Ambalapuzha Police Station
+Pathanamthitta,Ranni,7,03-02-2023 08:03,midnight,Assault,10.05534943,76.20093558,4,Pathanamthitta Town Police Station
+Kasaragod,Kasaragod Town,7,25-09-2022 06:10,evening,Theft,10.915621,75.13255459,2,Kasaragod Town Police Station
+Kozhikode,Kunnamangalam,6,07-12-2020 15:45,day,Theft,9.120602373,75.6219795,2,Kunnamangalam Police Station
+Thrissur,Guruvayur,8,18-12-2024 04:43,day,Assault,10.15482585,76.03747625,4,Thrissur Town Police Station
+Kollam,Punalur,1,07-09-2024 10:04,midnight,Fraud,11.62711847,76.91979266,3,Punalur Police Station
+Kasaragod,Kasaragod Town,4,20-10-2022 03:16,evening,Vandalism,10.44572664,75.09971505,2,Kasaragod Town Police Station
+Kollam,Punalur,7,14-06-2019 10:04,day,Robbery,9.229417325,75.78837034,4,Punalur Police Station
+Palakkad,Shoranur,1,08-12-2019 00:32,evening,Homicide,10.19830141,77.13416494,5,Shoranur Police Station
+Malappuram,Tirur,8,09-09-2023 01:27,midnight,Homicide,9.652356613,76.42101781,5,Perinthalmanna Police Station
+Thiruvananthapuram,Pattom,8,18-12-2020 19:16,midnight,Robbery,8.325160377,77.01949068,4,Pattom Police Station
+Kozhikode,Vadakara,5,19-05-2023 13:03,evening,Kidnapping,11.11355461,75.80888219,4,Kunnamangalam Police Station
+Palakkad,Shoranur,2,10-07-2020 12:22,evening,Kidnapping,10.23474043,77.09072409,4,Shoranur Police Station
+Pathanamthitta,Ranni,2,19-08-2024 18:13,midnight,Theft,8.832938436,76.51549375,2,Pathanamthitta Town Police Station
+Kannur,Mattannur,5,26-10-2020 11:16,midnight,Theft,12.93963933,76.90369992,2,Payyannur Police Station
+Kottayam,Kanjirappally,9,21-12-2020 02:18,midnight,Fraud,12.01266961,77.44220086,3,Pala Police Station
+Kollam,Paravur,1,10-09-2024 18:05,day,Cybercrime,11.51866799,75.12226633,3,Punalur Police Station
+Kozhikode,Vadakara,7,10-01-2024 16:28,evening,Assault,11.17119704,75.79963302,4,Kunnamangalam Police Station
+Palakkad,Shoranur,8,06-06-2022 12:56,midnight,Theft,12.27099627,76.63341526,2,Shoranur Police Station
+Palakkad,Shoranur,8,30-03-2023 06:38,midnight,Homicide,12.28996812,76.65545363,5,Shoranur Police Station
+Kottayam,Changanassery,5,27-12-2020 07:18,evening,Fraud,12.36882607,76.11201545,3,Pala Police Station
+Thiruvananthapuram,Kazhakootam,1,05-02-2021 22:23,evening,Assault,11.85065921,76.68574742,4,Kazhakootam Police Station
+Thiruvananthapuram,Kazhakootam,7,20-11-2024 18:00,midnight,Fraud,10.75182935,75.24775349,3,Kazhakootam Police Station
+Malappuram,Perinthalmanna,2,22-02-2024 16:19,day,Assault,9.472324226,74.9355423,4,Perinthalmanna Police Station
+Malappuram,Perinthalmanna,2,26-01-2020 14:05,midnight,Assault,12.76138964,77.04521975,4,Perinthalmanna Police Station
+Malappuram,Kottakkal,8,24-04-2022 07:04,midnight,Robbery,8.512722731,75.61528847,4,Perinthalmanna Police Station
+Alappuzha,Ambalapuzha,1,15-06-2023 04:24,evening,Theft,9.098447156,76.63994343,2,Ambalapuzha Police Station
+Kottayam,Changanassery,2,05-01-2024 07:36,evening,Vandalism,9.159295746,76.17474605,2,Pala Police Station
+Malappuram,Ponnani,6,25-01-2022 08:54,midnight,Fraud,10.41845567,76.09084712,3,Perinthalmanna Police Station
+Kannur,Mattannur,3,22-01-2024 22:04,day,Vandalism,12.08016368,75.25514528,2,Payyannur Police Station
+Kannur,Payyannur,7,29-02-2024 23:29,evening,Fraud,12.69372466,76.20620507,3,Payyannur Police Station
+Kannur,Taliparamba,1,07-12-2022 07:33,midnight,Robbery,8.719742608,74.86702124,4,Payyannur Police Station
+Alappuzha,Mavelikkara,2,28-12-2021 08:32,day,Homicide,8.918983404,77.36107627,5,Mavelikkara Police Station
+Kottayam,Changanassery,5,02-09-2023 03:24,evening,Vandalism,12.39001584,76.09381551,2,Pala Police Station
+Kasaragod,Kasaragod Town,1,06-08-2020 07:00,midnight,Homicide,12.76148079,76.44495786,5,Kasaragod Town Police Station
+Wayanad,Sulthan Bathery,1,26-04-2021 23:30,evening,Kidnapping,8.935470352,75.19811703,4,Sulthan Bathery Police Station
+Thrissur,Guruvayur,1,27-10-2024 06:10,midnight,Theft,10.98991594,77.10976776,2,Thrissur Town Police Station
+Wayanad,Meppadi,1,16-08-2019 04:40,day,Theft,11.62590415,75.04495034,2,Sulthan Bathery Police Station
+Palakkad,Shoranur,1,08-05-2021 23:36,evening,Cybercrime,10.25200427,77.10641506,3,Shoranur Police Station
+Ernakulam,Aluva,2,27-05-2024 22:05,midnight,Robbery,8.201326016,77.00542939,4,West Station
+Ernakulam,Edappally,7,02-01-2019 10:30,evening,Homicide,11.36019257,75.3016366,5,West Station
+Palakkad,Mannarkkad,6,26-02-2022 06:11,midnight,Assault,10.62098704,75.60271857,4,Mannarkkad Police Station
+Thiruvananthapuram,Kazhakootam,5,01-07-2020 09:16,day,Fraud,8.391080566,77.1237412,3,Kazhakootam Police Station
+Kottayam,Ettumanoor,8,16-12-2020 07:29,midnight,Theft,10.77483394,74.86261603,2,Pala Police Station
+Wayanad,Vythiri,5,26-06-2021 10:42,day,Vandalism,9.13954838,77.25636294,2,Sulthan Bathery Police Station
+Palakkad,Shoranur,9,18-04-2021 20:41,midnight,Fraud,12.29920995,76.5920007,3,Shoranur Police Station
+Thrissur,Guruvayur,8,22-04-2023 07:07,day,Fraud,10.16967288,76.03489353,3,Thrissur Town Police Station
+Ernakulam,Edappally,7,02-12-2019 15:47,evening,Cybercrime,11.36736063,75.31978815,3,West Station
+Pathanamthitta,Ranni,1,06-03-2021 07:44,evening,Homicide,9.702738922,76.84840236,5,Pathanamthitta Town Police Station
+Kannur,Thalassery,6,28-05-2019 20:11,midnight,Theft,12.76773535,77.65735545,2,Payyannur Police Station
+Malappuram,Perinthalmanna,2,24-07-2019 16:02,evening,Fraud,8.269086506,75.40884914,3,Perinthalmanna Police Station
+Kollam,Karunagappally,4,14-01-2022 22:01,day,Theft,10.51551749,77.03081985,2,Punalur Police Station
+Malappuram,Tirur,9,22-03-2023 00:21,midnight,Assault,9.593602342,76.44077151,4,Perinthalmanna Police Station
+Thiruvananthapuram,Kazhakootam,9,18-03-2023 10:17,midnight,Cybercrime,10.74974605,75.26963599,3,Kazhakootam Police Station
+Thiruvananthapuram,Kowdiar,6,19-08-2023 07:15,midnight,Assault,11.10807417,76.19123654,4,Kowdiar Police Station
+Wayanad,Sulthan Bathery,2,23-01-2022 05:45,evening,Theft,8.95379503,75.20934276,2,Sulthan Bathery Police Station
+Malappuram,Manjeri,7,27-07-2023 01:57,day,Kidnapping,10.78189349,75.44560052,4,Perinthalmanna Police Station
+Malappuram,Perinthalmanna,1,11-04-2019 12:31,midnight,Vandalism,12.77191557,77.03911217,2,Perinthalmanna Police Station
+Wayanad,Meppadi,5,08-10-2022 14:26,midnight,Theft,12.10089329,76.87181942,2,Sulthan Bathery Police Station
+Kollam,Punalur,8,05-06-2024 22:25,day,Homicide,9.264869291,75.78633065,5,Punalur Police Station
+Idukki,Kattappana,9,06-05-2023 12:14,evening,Fraud,11.93345855,76.06629416,3,Nedumkandam Police Station
+Kasaragod,Kasaragod Town,8,24-01-2023 02:59,evening,Fraud,10.89493567,75.13303271,3,Kasaragod Town Police Station
+Thiruvananthapuram,Kowdiar,6,30-01-2019 11:12,midnight,Assault,11.04856168,76.2470806,4,Kowdiar Police Station
+Wayanad,Meppadi,7,28-01-2020 18:53,day,Vandalism,11.86709575,77.06421923,2,Sulthan Bathery Police Station
+Alappuzha,Kayamkulam,9,13-01-2020 23:40,midnight,Cybercrime,8.861017068,77.32166527,3,Kayamkulam Police Station
+Kasaragod,Manjeshwar,9,19-04-2019 02:36,day,Kidnapping,12.92287485,76.42373768,4,Kasaragod Town Police Station
+Kollam,Karunagappally,6,19-05-2021 07:58,evening,Robbery,11.53791328,75.72392416,4,Punalur Police Station
+Pathanamthitta,Ranni,1,19-02-2023 22:36,midnight,Vandalism,8.846109096,76.50853505,2,Pathanamthitta Town Police Station
+Kottayam,Vaikom,8,12-12-2024 15:49,evening,Fraud,9.229134708,75.08168858,3,Pala Police Station
+Malappuram,Perinthalmanna,2,11-07-2023 00:17,midnight,Homicide,12.74054205,77.0536015,5,Perinthalmanna Police Station
+Wayanad,Mananthavady,4,03-11-2024 02:47,evening,Vandalism,12.01139502,74.95943058,2,Sulthan Bathery Police Station
+Idukki,Nedumkandam,3,28-02-2024 22:48,midnight,Assault,9.733519013,77.65685693,4,Nedumkandam Police Station
+Kottayam,Vaikom,7,25-02-2022 23:53,evening,Assault,9.221997149,75.07755294,4,Pala Police Station
+Ernakulam,Ernakulam Town,8,28-05-2024 17:54,day,Robbery,10.60422059,77.58016363,4,West Station
+Wayanad,Meppadi,1,28-06-2023 04:05,midnight,Homicide,12.29810255,76.80539485,5,Sulthan Bathery Police Station
+Pathanamthitta,Ranni,1,09-02-2021 04:32,evening,Cybercrime,9.670482618,76.8412621,3,Pathanamthitta Town Police Station
+Thrissur,Guruvayur,1,25-03-2019 02:54,midnight,Vandalism,11.01053126,77.08838612,2,Thrissur Town Police Station
+Malappuram,Perinthalmanna,2,26-09-2021 08:08,midnight,Homicide,12.73108396,76.99205324,5,Perinthalmanna Police Station
+Kozhikode,Feroke,8,08-06-2019 15:05,evening,Cybercrime,12.86063758,75.09099961,3,Kunnamangalam Police Station
+Kasaragod,Kasaragod Town,6,29-07-2022 12:39,evening,Homicide,10.86530065,75.14628659,5,Kasaragod Town Police Station
+Palakkad,Chittur,7,23-02-2025 07:04,evening,Homicide,9.298566889,75.21747508,5,Mannarkkad Police Station
+Pathanamthitta,Ranni,7,08-06-2023 03:47,midnight,Theft,10.01256059,76.19841045,2,Pathanamthitta Town Police Station
+Thrissur,Chalakudy,5,04-08-2021 15:15,day,Assault,10.84781912,75.36555032,4,Thrissur Town Police Station
+Kollam,Punalur,3,06-01-2024 20:30,day,Vandalism,10.0923148,77.1605444,2,Punalur Police Station
+Pathanamthitta,Konni,2,20-04-2021 16:37,midnight,Homicide,8.47464597,76.14201296,5,Pathanamthitta Town Police Station
+Kasaragod,Kasaragod Town,5,15-12-2023 16:35,evening,Vandalism,10.40154482,75.07899817,2,Kasaragod Town Police Station
+Thrissur,Irinjalakuda,7,24-01-2025 21:05,evening,Robbery,11.72430487,76.32689803,4,Thrissur Town Police Station
+Kottayam,Kanjirappally,8,12-01-2020 15:46,midnight,Homicide,12.01241349,77.38096025,5,Pala Police Station
+Kottayam,Ettumanoor,6,23-08-2023 22:18,midnight,Fraud,10.82019001,74.90858456,3,Pala Police Station
+Kottayam,Changanassery,2,11-08-2023 01:45,evening,Assault,9.114446551,76.21046332,4,Pala Police Station
+Thrissur,Wadakkanchery,3,15-01-2025 01:18,day,Fraud,12.68343552,76.25732072,3,Thrissur Town Police Station
+Wayanad,Meppadi,8,04-11-2024 23:10,day,Vandalism,11.86881434,77.06484798,2,Sulthan Bathery Police Station
+Kozhikode,Kunnamangalam,5,01-10-2022 22:21,day,Vandalism,9.125832802,75.6199737,2,Kunnamangalam Police Station
+Wayanad,Meppadi,1,09-08-2019 14:34,day,Assault,11.61116193,75.0525196,4,Sulthan Bathery Police Station
+Thiruvananthapuram,Kowdiar,8,06-12-2022 22:21,midnight,Vandalism,10.83851861,75.74639378,2,Kowdiar Police Station
+Kasaragod,Uppala,6,19-06-2024 20:13,evening,Fraud,8.837497921,75.3304003,3,Kasaragod Town Police Station
+Kasaragod,Cheruvathur,1,14-01-2022 06:34,evening,Homicide,9.020157483,74.89675287,5,Kasaragod Town Police Station
+Kottayam,Changanassery,1,06-08-2021 09:06,evening,Homicide,9.173470143,76.17887283,5,Pala Police Station
+Kottayam,Changanassery,1,06-05-2020 18:38,evening,Theft,9.152376233,76.17842242,2,Pala Police Station
+Thiruvananthapuram,Pattom,9,14-07-2022 19:39,midnight,Robbery,8.365591814,77.01803615,4,Pattom Police Station
+Palakkad,Mannarkkad,7,05-04-2023 07:08,midnight,Vandalism,10.61837278,75.56427958,2,Mannarkkad Police Station
+Kollam,Paravur,8,08-02-2024 06:51,day,Fraud,12.43379286,75.86959235,3,Punalur Police Station
+Thrissur,Wadakkanchery,3,04-08-2024 07:22,day,Vandalism,10.48999171,75.69177625,2,Thrissur Town Police Station
+Wayanad,Meppadi,2,21-04-2020 18:38,day,Vandalism,11.57083521,75.03450625,2,Sulthan Bathery Police Station
+Wayanad,Mananthavady,2,05-08-2019 20:19,evening,Cybercrime,12.21366428,77.02046129,3,Sulthan Bathery Police Station
+Malappuram,Kottakkal,6,25-05-2024 06:09,midnight,Theft,8.528784533,75.60604527,2,Perinthalmanna Police Station
+Wayanad,Sulthan Bathery,3,22-03-2022 14:20,evening,Fraud,8.9667185,75.16790392,3,Sulthan Bathery Police Station
+Pathanamthitta,Thiruvalla,5,05-05-2023 01:15,evening,Fraud,8.931968186,76.91706351,3,Pathanamthitta Town Police Station
+Kollam,Punalur,2,06-10-2021 01:15,midnight,Vandalism,11.63156777,76.94649997,2,Punalur Police Station
+Malappuram,Perinthalmanna,1,05-09-2021 23:34,midnight,Theft,12.73000878,77.01368775,2,Perinthalmanna Police Station
+Wayanad,Meppadi,1,16-10-2023 14:23,day,Homicide,11.60983386,75.06076583,5,Sulthan Bathery Police Station
+Idukki,Peermade,7,05-05-2023 23:50,evening,Fraud,8.670337413,76.88471204,3,Nedumkandam Police Station
+Malappuram,Tirur,8,05-10-2023 03:13,midnight,Homicide,9.648151786,76.45168941,5,Perinthalmanna Police Station
+Alappuzha,Ambalapuzha,6,22-07-2021 01:17,midnight,Theft,8.910658387,75.68912203,2,Ambalapuzha Police Station
+Wayanad,Meppadi,6,28-12-2020 19:07,midnight,Homicide,12.05677116,76.83640287,5,Sulthan Bathery Police Station
+Wayanad,Meppadi,1,25-04-2025 00:02,day,Assault,11.56386169,75.04470566,4,Sulthan Bathery Police Station
+Alappuzha,Ambalapuzha,8,20-01-2019 02:34,midnight,Cybercrime,8.901645934,75.71193742,3,Ambalapuzha Police Station
+Wayanad,Sulthan Bathery,7,12-02-2025 02:20,midnight,Kidnapping,10.6929404,75.41148241,4,Sulthan Bathery Police Station
+Kasaragod,Manjeshwar,7,10-03-2025 05:28,day,Fraud,12.85971241,76.41956439,3,Kasaragod Town Police Station
+Ernakulam,Vytilla,9,23-01-2025 06:21,midnight,Robbery,11.99002186,77.70260102,4,Vytilla Police Station
+Kollam,Karunagappally,4,23-10-2023 00:29,day,Cybercrime,10.53013604,77.0111489,3,Punalur Police Station
+Malappuram,Perinthalmanna,1,16-11-2020 17:58,midnight,Kidnapping,12.73517288,77.03266714,4,Perinthalmanna Police Station
+Malappuram,Perinthalmanna,3,02-12-2024 20:45,evening,Homicide,12.91273695,77.08777402,5,Perinthalmanna Police Station
+Kannur,Payyannur,8,30-01-2022 04:29,evening,Fraud,12.70408409,76.2093667,3,Payyannur Police Station
+Wayanad,Meppadi,5,10-05-2024 06:49,midnight,Homicide,12.08343381,76.89569936,5,Sulthan Bathery Police Station
+Kollam,Punalur,8,07-07-2022 15:55,day,Assault,9.210262018,75.75636553,4,Punalur Police Station
+Wayanad,Meppadi,1,31-07-2022 21:38,day,Theft,11.63511665,75.06211321,2,Sulthan Bathery Police Station
+Ernakulam,Aluva,2,21-03-2022 11:14,midnight,Fraud,8.201443237,77.04336082,3,West Station
+Idukki,Peermade,8,25-12-2024 15:12,evening,Kidnapping,8.638469992,76.91146016,4,Nedumkandam Police Station
+Kollam,Karunagappally,6,10-09-2021 04:32,evening,Kidnapping,11.55559529,75.69380352,4,Punalur Police Station
+Malappuram,Perinthalmanna,1,06-04-2019 03:55,day,Assault,9.495697323,74.93741706,4,Perinthalmanna Police Station
+Palakkad,Mannarkkad,7,16-10-2023 17:42,midnight,Assault,10.63864873,75.61700675,4,Mannarkkad Police Station
+Kollam,Punalur,5,22-11-2022 23:07,midnight,Vandalism,10.14389048,77.6819055,2,Punalur Police Station
+Idukki,Kattappana,8,15-11-2020 09:16,evening,Fraud,11.90636725,76.04711351,3,Nedumkandam Police Station
+Thrissur,Irinjalakuda,7,13-03-2025 01:14,evening,Homicide,11.74657807,76.33665184,5,Thrissur Town Police Station
+Kannur,Taliparamba,7,13-02-2019 13:35,evening,Robbery,11.75355148,77.72030808,4,Payyannur Police Station
+Pathanamthitta,Konni,2,20-04-2024 20:38,midnight,Kidnapping,8.505968194,76.16061935,4,Pathanamthitta Town Police Station
+Kottayam,Vaikom,6,19-11-2021 20:02,evening,Kidnapping,9.2174404,75.07338608,4,Pala Police Station
+Palakkad,Shoranur,1,23-06-2022 07:48,evening,Assault,10.21362966,77.12716985,4,Shoranur Police Station
+Ernakulam,Vytilla,8,04-11-2022 09:39,midnight,Cybercrime,11.99007625,77.69831254,3,Vytilla Police Station
+Idukki,Nedumkandam,3,06-08-2021 13:12,midnight,Assault,9.708335019,77.65830122,4,Nedumkandam Police Station
+Wayanad,Mananthavady,5,17-09-2021 20:06,evening,Robbery,11.9665195,74.98895979,4,Sulthan Bathery Police Station
+Wayanad,Meppadi,2,29-08-2022 08:40,day,Homicide,11.6087549,75.02492714,5,Sulthan Bathery Police Station
+Wayanad,Mananthavady,5,06-11-2020 14:07,evening,Homicide,11.98069113,75.00155762,5,Sulthan Bathery Police Station
+Pathanamthitta,Ranni,6,25-01-2020 09:11,day,Cybercrime,12.7521685,75.32685459,3,Pathanamthitta Town Police Station
+Idukki,Nedumkandam,1,22-11-2024 19:48,midnight,Kidnapping,9.771286157,77.69431423,4,Nedumkandam Police Station
+Kannur,Taliparamba,1,15-12-2022 19:42,midnight,Assault,8.702807503,74.89813221,4,Payyannur Police Station
+Ernakulam,Vytilla,1,21-07-2019 08:31,midnight,Vandalism,9.334373144,77.05739119,2,Vytilla Police Station
+Kozhikode,Thamarassery,1,07-05-2023 16:55,midnight,Homicide,11.08994389,76.13603896,5,Kunnamangalam Police Station
+Kollam,Karunagappally,5,09-04-2024 13:41,day,Robbery,10.51567445,76.99526975,4,Punalur Police Station
+Wayanad,Mananthavady,4,04-03-2024 07:31,evening,Fraud,12.01300022,74.9792551,3,Sulthan Bathery Police Station
+Pathanamthitta,Ranni,2,28-04-2019 00:02,evening,Theft,9.658845263,76.90380626,2,Pathanamthitta Town Police Station
+Wayanad,Mananthavady,4,30-09-2021 13:31,evening,Theft,11.99587708,74.94723886,2,Sulthan Bathery Police Station
+Idukki,Kattappana,5,13-07-2023 19:32,evening,Theft,12.79726565,75.21606788,2,Nedumkandam Police Station
+Kollam,Paravur,2,03-11-2021 23:59,day,Vandalism,11.5014456,75.07308202,2,Punalur Police Station
+Thrissur,Irinjalakuda,7,03-08-2022 16:30,evening,Kidnapping,11.76719731,76.31668722,4,Thrissur Town Police Station
+Wayanad,Mananthavady,4,30-10-2020 23:19,evening,Assault,11.97249307,74.98120898,4,Sulthan Bathery Police Station
+Kozhikode,Thamarassery,1,24-04-2019 13:10,midnight,Cybercrime,11.08717387,76.15022219,3,Kunnamangalam Police Station
+Kozhikode,Thamarassery,2,18-03-2019 22:09,midnight,Vandalism,11.08660644,76.16079419,2,Kunnamangalam Police Station
+Pathanamthitta,Thiruvalla,6,16-10-2022 17:22,evening,Vandalism,8.960905825,76.89492501,2,Pathanamthitta Town Police Station
+Pathanamthitta,Thiruvalla,1,10-04-2024 23:42,midnight,Homicide,12.97170417,76.63700623,5,Pathanamthitta Town Police Station
+Wayanad,Meppadi,7,05-09-2023 09:42,evening,Fraud,8.840182774,75.3003561,3,Sulthan Bathery Police Station
+Pathanamthitta,Ranni,1,18-02-2022 03:07,evening,Vandalism,9.647747361,76.87357281,2,Pathanamthitta Town Police Station
+Kottayam,Vaikom,8,09-02-2023 15:56,evening,Robbery,9.244191805,75.08530984,4,Pala Police Station
+Idukki,Peermade,9,13-02-2024 10:39,evening,Fraud,8.60484316,76.88727277,3,Nedumkandam Police Station
+Malappuram,Tirur,8,24-03-2025 14:58,midnight,Robbery,9.650865924,76.45612649,4,Perinthalmanna Police Station
+Pathanamthitta,Ranni,1,24-10-2020 04:29,midnight,Kidnapping,12.8715821,76.21906035,4,Pathanamthitta Town Police Station
+Kozhikode,Thamarassery,1,28-07-2022 03:52,midnight,Assault,11.05958067,76.16749974,4,Kunnamangalam Police Station
+Alappuzha,Mavelikkara,1,22-06-2023 01:34,day,Theft,9.188768714,75.89362736,2,Mavelikkara Police Station
+Palakkad,Mannarkkad,5,04-10-2020 19:28,midnight,Vandalism,10.59747191,75.56848056,2,Mannarkkad Police Station
+Thiruvananthapuram,Kowdiar,7,07-06-2020 21:00,midnight,Assault,11.07630258,76.23377023,4,Kowdiar Police Station
+Pathanamthitta,Konni,2,23-10-2022 23:47,midnight,Kidnapping,8.497636314,76.13107663,4,Pathanamthitta Town Police Station
