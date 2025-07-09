@@ -1,0 +1,44 @@
+<!-- templates/policeadmin/officers/officers_by_district.html -->
+{% extends "shared/base.html" %}
+
+{% block title %}Officers Management | Crime Prediction System{% endblock %}
+
+{% block page_title %}Officers Management{% endblock %}
+
+{% block content %}
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="h5 mb-0">Officers by District</h3>
+        </div>
+        
+        <div class="accordion" id="districtsAccordion">
+            {% for district, stations in stations_by_district.items %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" 
+                            aria-controls="collapse{{ forloop.counter }}">
+                        {{ district }} District
+                    </button>
+                </h2>
+                <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show" 
+                     aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#districtsAccordion">
+                    <div class="accordion-body p-0">
+                        <div class="list-group list-group-flush">
+                            {% for station in stations %}
+                            <a href="{% url 'officers_by_station' station.id %}" 
+                               class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                {{ station.name }}
+                                <span class="badge bg-primary rounded-pill">{{ station.officer_count }} officers</span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
