@@ -1,0 +1,283 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<div class="py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Officer Dashboard</h1>
+        <div class="btn-group">
+            <button class="btn btn-sm btn-outline-secondary active">Today</button>
+            <button class="btn btn-sm btn-outline-secondary">Week</button>
+        </div>
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="row mb-4">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Assigned Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ assigned_cases_count }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Pending Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ pending_cases_count }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-hourglass-half fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Solved Cases</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ solved_cases_count }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2 stat-card">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Active Patrols</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ active_patrols_count }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-route fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Assigned Cases Table -->
+        <div class="col-lg-8 mb-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Your Assigned Cases</h6>
+                    <a href="{% url 'case_list' %}?assigned_to={{ user.id }}" class="btn btn-sm btn-primary">View All</a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Case ID</th>
+                                    <th>Type</th>
+                                    <th>Location</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for case in assigned_cases %}
+                                <tr>
+                                    <td><a href="{% url 'case_detail' case.id %}">{{ case.id }}</a></td>
+                                    <td>{{ case.crime_category.name }}</td>
+                                    <td>{{ case.location.area }}</td>
+                                    <td>{{ case.date_occurred|date:"M d, Y" }}</td>
+                                    <td>
+                                        <span class="badge 
+                                            {% if case.status == 'solved' %}bg-success
+                                            {% elif case.status == 'under_investigation' %}bg-warning
+                                            {% else %}bg-primary{% endif %}">
+                                            {{ case.get_status_display }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {% if case.is_high_priority %}
+                                        <span class="badge bg-danger">High</span>
+                                        {% else %}
+                                        <span class="badge bg-info">Normal</span>
+                                        {% endif %}
+                                    </td>
+                                    {% if case.status != 'solved' %}
+                                <td>
+                                    <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#updateCaseModal{{ case.id }}">Update</a>
+                                </td>
+
+                                <!-- Modal to update case status -->
+                                <div class="modal fade" id="updateCaseModal{{ case.id }}" tabindex="-1" aria-labelledby="updateCaseModalLabel{{ case.id }}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <form method="POST" action="{% url 'update_case_status' case.id %}">
+                                            {% csrf_token %}
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="updateCaseModalLabel{{ case.id }}">Update Case Status</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="mb-3">
+                                                        <label for="status{{ case.id }}" class="form-label">Select New Status</label>
+                                                        <select class="form-select" id="status{{ case.id }}" name="status">
+                                                            <option value="reported" {% if case.status == 'reported' %}selected{% endif %}>Reported</option>
+                                                            <option value="under_investigation" {% if case.status == 'under_investigation' %}selected{% endif %}>Under Investigation</option>
+                                                            <option value="solved" {% if case.status == 'solved' %}selected{% endif %}>Solved</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <td>
+                                    <span class="btn btn-sm btn-success disabled">Solved</span>
+                                </td>
+                            {% endif %}
+
+                                 </tr>
+
+                                {% empty %}
+                                <tr>
+                                    <td colspan="7" class="text-center">No cases assigned to you</td>
+                                </tr>
+                                
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patrol Assignments -->
+        <div class="col-lg-4 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Your Patrol Assignments</h6>
+                    <a href="{% url 'patrol_assign' %}" class="btn btn-sm btn-primary">View All</a>
+                </div>
+                <div class="card-body">
+                    {% if patrol_assignments %}
+                    <div class="list-group">
+                        {% for patrol in patrol_assignments %}
+                        <div class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">{{ patrol.route.name }}</h6>
+                                <small class="text-muted">{{ patrol.get_status_display }}</small>
+                            </div>
+                            <p class="mb-1">
+                                <i class="fas fa-map-marker-alt"></i> {{ patrol.route.area }}
+                            </p>
+                            <small class="text-muted">
+                                <i class="fas fa-clock"></i> {{ patrol.start_time|time:"H:i" }} - {{ patrol.end_time|time:"H:i" }}
+                            </small>
+                            <div class="mt-2">
+                                <span class="badge bg-{% if patrol.is_active %}success{% else %}secondary{% endif %}">
+                                    {% if patrol.is_active %}Active{% else %}Upcoming{% endif %}
+                                </span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="text-center py-3">
+                        <p>No patrol assignments scheduled</p>
+                        <a href="{% url 'patrol_assign' %}" class="btn btn-sm btn-outline-primary">Request Patrol</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Quick Actions</h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'case_add' %}" class="btn btn-primary">File New Crime Report</a>
+                        <a href="{% url 'patrol_assign' %}" class="btn btn-secondary">View Patrol Routes</a>
+                        <a href="" class="btn btn-info">Manage Evidence</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Your Performance</h6>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Update Case Modal -->
+
+
+
+<script>
+    // Performance Chart
+    const perfCtx = document.getElementById('performanceChart').getContext('2d');
+    new Chart(perfCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Solved', 'Pending', 'Overdue'],
+            datasets: [{
+                label: 'Cases',
+                data: [{{ solved_cases_count }}, {{ pending_cases_count }}, {{ overdue_cases_count }}],
+                backgroundColor: ['#1cc88a', '#f6c23e', '#e74a3b']
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true }
+            },
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+</script>
+{% endblock %}
